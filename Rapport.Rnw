@@ -1,0 +1,43 @@
+\documentclass{article}
+
+\begin{document}
+
+\section*{Exercice 1}
+
+1. distX = as.matrix(X)
+    distX = distX ^2
+  
+2. Méthode 1 
+  XC = scale(X, scale=T)
+  W = XC\%*\%t(XC)
+  
+  Méthode 2 
+  QN = diag(nrow(X)) - matrix(1, nrow(X), nrow(X))/nrow(X)
+  W = -1/2*QN\%*\%distX\%*\%QN
+  
+3. Pour vérifier si elle est définie semi-positive, il suffit de vérifier que les valeurs propres soient positives ce qui est le cas car on peut considérer que -1.37*10^-17 et -2.45*10^-16 sont des valeurs nulles. 
+eigen(W)
+
+4. L = eigen(W)$values
+  L = diag(nrow(X))*L
+  
+  V = eigen(W)$vectors
+  
+5. C = V\%*\%sqrt(L)
+  pas oublier de retirer les NaN
+  
+  plot(C)
+  idem à biplot(princomp(X))
+  
+\section*{Exercice 2}
+
+m = as.vector(mutation)
+b = cmdscale(mutation, 2, T)
+c = as.vector(dist(b$points))
+plot(b,c) problème mais on est pas loin 
+qualité à calculer avec les valeurs propres b[,1]$eigen etc... / sum 
+
+on refait de même avec cmdscale(mutation, 3, T) jusqu'à 5 
+
+  
+\end{document}

@@ -1,4 +1,12 @@
+% !Rnw weave = knitr
+
 \documentclass{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[cyr]{aeguill}
+\usepackage[francais]{babel}
+
 
 \begin{document}
 
@@ -8,13 +16,49 @@
 
 
 
+<<echo=FALSE>>=
+load("exo1.RData")
+@
 
+On centre tout d'abord la matrice X à l'aide de la matrice de centrage Q8, ça nous servira plus tard :
+<<eval=FALSE>>=
+X = Q8 %*% X
+@
+On calcule la matrice des distances euclidiennes D2 :
+<<eval=FALSE>>=
+D2 = as.matrix(dist(X))
+D2 = D2^2
+@
+<<>>=
+D2
+@
+Après avoir obtenu cette précieuse matrice, on peut calculer la matrice des produits scalaires de 2 façons :
+<<>>=
+W = X %*% t(X)
+@
 
+Mais normalement, on n'aurait pas accès à X directement, il faut la déduire de la matrice des distances euclidiennes :
+<<>>=
+W = (-1/2)*Q8 %*% D2 %*% Q8
+@
 
+Il reste à vérifier que W soit semi définie-positive, pour savoir si la matrice des distances était bien euclidienne :
+<<>>=
+L = eigen(W)$values
+L
+@
+W est bien semi définie-positive, on va juste arrondir à zero les valeurs négatives très petites, et diagonaliser L :
 
+<<>>=
+L[L<0] = 0
+L = diag(L)
+L
+@
 
-
-
+Matrice des vecteurs propres :
+<<>>=
+V = eigen(W)$vectors
+@
 
 
 
@@ -22,6 +66,7 @@
 
 
 \begin{verbatim}
+
 
 1. distX = as.matrix(X)
     distX = distX ^2
@@ -107,4 +152,7 @@ Avec 3 vert au milieu des noirs
 
 tableau de contingence pour comparer les partitions table(res$cluster, res2$cluster)
 \end{verbatim}
+
+
+
 \end{document}

@@ -1,3 +1,5 @@
+% !Rnw weave = knitr
+
 \documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
 %% maxwidth is the original width if it is less than linewidth
 %% otherwise use linewidth (to make sure the graphics do not exceed the margin)
@@ -48,6 +50,11 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[cyr]{aeguill}
+\usepackage[francais]{babel}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
@@ -59,11 +66,111 @@
 
 
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+On centre tout d'abord la matrice X à l'aide de la matrice de centrage Q8, ça nous servira plus tard :
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{X} \hlkwb{=} \hlstd{Q8} \hlopt{%*%} \hlstd{X}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+On calcule la matrice des distances euclidiennes D2 :
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{D2} \hlkwb{=} \hlkwd{as.matrix}\hlstd{(}\hlkwd{dist}\hlstd{(X))}
+\hlstd{D2} \hlkwb{=} \hlstd{D2}\hlopt{^}\hlnum{2}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{D2}
+\end{alltt}
+\begin{verbatim}
+##       1     2     3     4     5     6     7     8
+## 1  0.00 37.25 67.25  1.00  1.00 55.25  1.25 58.25
+## 2 37.25  0.00  4.50 48.25 31.25  2.50 36.50  2.50
+## 3 67.25  4.50  0.00 81.25 58.25  1.00 65.00  1.00
+## 4  1.00 48.25 81.25  0.00  2.00 67.25  1.25 72.25
+## 5  1.00 31.25 58.25  2.00  0.00 46.25  0.25 51.25
+## 6 55.25  2.50  1.00 67.25 46.25  0.00 52.00  2.00
+## 7  1.25 36.50 65.00  1.25  0.25 52.00  0.00 58.00
+## 8 58.25  2.50  1.00 72.25 51.25  2.00 58.00  0.00
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+Après avoir obtenu cette précieuse matrice, on peut calculer la matrice des produits scalaires de 2 façons :
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{W} \hlkwb{=} \hlstd{X} \hlopt{%*%} \hlkwd{t}\hlstd{(X)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Mais normalement, on n'aurait pas accès à X directement, il faut la déduire de la matrice des distances euclidiennes :
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{W} \hlkwb{=} \hlstd{(}\hlopt{-}\hlnum{1}\hlopt{/}\hlnum{2}\hlstd{)}\hlopt{*}\hlstd{Q8} \hlopt{%*%} \hlstd{D2} \hlopt{%*%} \hlstd{Q8}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Il reste à vérifier que W soit semi définie-positive, pour savoir si la matrice des distances était bien euclidienne :
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{L} \hlkwb{=} \hlkwd{eigen}\hlstd{(W)}\hlopt{$}\hlstd{values}
+\hlstd{L}
+\end{alltt}
+\begin{verbatim}
+## [1]  1.114606e+02  1.758189e+00  1.100935e-14 -3.346521e-16 -9.500733e-16
+## [6] -1.069879e-15 -1.845951e-15 -6.005347e-15
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+W est bien semi définie-positive, on va juste arrondir à zero les valeurs négatives très petites, et diagonaliser L :
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{L[L}\hlopt{<}\hlnum{0}\hlstd{]} \hlkwb{=} \hlnum{0}
+\hlstd{L} \hlkwb{=} \hlkwd{diag}\hlstd{(L)}
+\hlstd{L}
+\end{alltt}
+\begin{verbatim}
+##          [,1]     [,2]         [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,] 111.4606 0.000000 0.000000e+00    0    0    0    0    0
+## [2,]   0.0000 1.758189 0.000000e+00    0    0    0    0    0
+## [3,]   0.0000 0.000000 1.100935e-14    0    0    0    0    0
+## [4,]   0.0000 0.000000 0.000000e+00    0    0    0    0    0
+## [5,]   0.0000 0.000000 0.000000e+00    0    0    0    0    0
+## [6,]   0.0000 0.000000 0.000000e+00    0    0    0    0    0
+## [7,]   0.0000 0.000000 0.000000e+00    0    0    0    0    0
+## [8,]   0.0000 0.000000 0.000000e+00    0    0    0    0    0
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+Matrice des vecteurs propres :
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{V} \hlkwb{=} \hlkwd{eigen}\hlstd{(W)}\hlopt{$}\hlstd{vectors}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+>>>>>>> a03dc5d6e1e9ed556e90299424c3c7fad9660aca
 
 
 
@@ -71,6 +178,7 @@
 
 
 \begin{verbatim}
+
 
 1. distX = as.matrix(X)
     distX = distX ^2
@@ -181,4 +289,8 @@ tableau de contingence pour comparer les partitions table(res$cluster, res2$clus
 \end{verbatim}
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a03dc5d6e1e9ed556e90299424c3c7fad9660aca
 \end{document}

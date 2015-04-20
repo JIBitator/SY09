@@ -54,6 +54,22 @@
 \section*{Exercice 1}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{verbatim}
 
 1. distX = as.matrix(X)
@@ -103,31 +119,54 @@ on refait de même avec cmdscale(mutation, 3, T) jusqu'à 5
 library(cluster)
 clusplot 
 \subsection*{Iris}
+\begin{figure}
+<<iris, fig=TRUE>>=
+par(mfrow=c(1,3))
+clusplot(iris, res2$cluster)
+res3 = kmeans(iris, 3)
+clusplot(iris, res3$cluster)
+res4 = kmeans(iris, 4)
+clusplot(iris, res4$cluster)
+@$
+\caption{Visualisation de kmeans avec 2, 3 et 4 partitions}
+\end{figure}
+\subsubsection*{Question 1 - Différents nombres de partiton}
+Premièrement, nous remarquons que les partitions n'ont pas toutes le même nombre d'éléments. 
+Ensuite, elle varie suivant le nombre de partitions. En effet, nous pourrions penser qu'entre eux 3 et 4 partitions, l'ajout d'une partition subdiviserait une partition déjà existante. Comme le montre les graphes ci dessous cela n'est pas le cas. En effet les 3 partitions de droit pour K=4 ne sont pas pas contenus dans entièrement 2 partitions de K=3. Toutes les partitions sont redéfinis à chaque fois que nous augmontons le nombre.   
+\subsubsection*{Question 2 - Stabilité des partitions}
+De plus, même pour un même K, dans notre cas k=3, les partitions peuvent changer. Ici, nous avons deux cas différents avec des inerties de classes de 143 ou 78.9. Cela est du au choix aléatoire des centres au début de l'algorithme.
+%%TODO add graphe si place 
+\subsubsection*{Question 3 - Nombre de partitions optimales}
 
 \begin{verbatim}
-iris = iris[ ,1:4]
-res2 = kmeans(iris, 2)
-plot(iris, col= res2$cluster)
-clusplot(iris, res2$cluster)i
-res2 = kmeans(iris, 3)
-> plot(iris, col= res2$cluster)
-
-2 types différents : 143 ou 78.9 pour l'inertie des classes (tot.withinss)
-
 $for(j in 2:10){
   for(i in 1:100){
     test[j, i] = kmeans(iris, j)$tot.withinss
   }
 }$
 apply(test, 2, min)
-La solution qui apparait en 3 classes n'est pas flagrante avec le tableau des minimums des inerties. La méthode du coude ne fonctionne pas très bien, elle ne fait pas apparaitre de coude. Le minimum d'inertie de  fait que diminuer en fonction du nombre de classes. 
-Une solution serait de pénaliser un grand nombre de classes par le nombre d'individus présents dans la classe.
 \end{verbatim}
+%%TODO add graphe 
+La solution optimale semble être en 3 classes. Pourtant celle-ci n'est pas flagrante avec le tableau des minimums des inerties. La méthode du coude ne fonctionne pas très bien, elle ne fait pas apparaitre de coude. Le minimum d'inertie de  fait que diminuer en fonction du nombre de classes. 
+Une solution serait de pénaliser un grand nombre de classes par le nombre d'individus présents dans la classe.
+
+\subsubsection*{Question 4 - Partitions réelles}
+
+%%TODO quelle fonction utilisée? 
 
 \subsection*{Crabs}
-
+\begin{verbatim}
 library(MASS)
+data(crabs)
+crabsquant <- crabs[,4:8]
+crabsquant <- crabsquant/matrix(rep(crabsquant[,4],dim(crabsquant)[2]),
+nrow=dim(crabsquant)[1],byrow=F)
+clusplot(crabsquant, kmeans(crabsquant, 4)$cluster)
+plot(crabsquant, col =kmeans(crabsquant, 4)$cluster) %% Pour pareil à celui du TP1
+\end{verbatim}
+\includegraphics[width=\textwidth]{ex2.png}
 
+Nous retrouvons les mêmes classes avec la partitions des centre mobiles ou suivant la classification suivant l'espèce et le sexe. Cela montre bien que les autres variables permettent de déterminer l'espèce et le sexe d'un crabe. 
 
 \subsection*{Mutations}
 \begin{verbatim}
@@ -140,4 +179,6 @@ Avec 3 vert au milieu des noirs
 
 tableau de contingence pour comparer les partitions table(res$cluster, res2$cluster)
 \end{verbatim}
+
+
 \end{document}

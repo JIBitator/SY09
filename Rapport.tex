@@ -53,6 +53,9 @@
 
 \section*{Exercice 1}
 
+
+\begin{verbatim}
+
 1. distX = as.matrix(X)
     distX = distX ^2
   
@@ -78,8 +81,11 @@ eigen(W)
   plot(C)
   idem à biplot(princomp(X))
   
+\end{verbatim}
+  
 \section*{Exercice 2}
 
+\begin{verbatim}
 m = as.vector(mutation)
 b = cmdscale(mutation, 2, T)
 c = as.vector(dist(b$points))
@@ -88,11 +94,17 @@ qualité à calculer avec les valeurs propres b[,1]$eigen etc... / sum
 
 on refait de même avec cmdscale(mutation, 3, T) jusqu'à 5 
 
+\end{verbatim}
+
 \section*{Exercice 3} 
+
+
 
 library(cluster)
 clusplot 
 \subsection*{Iris}
+
+\begin{verbatim}
 iris = iris[ ,1:4]
 res2 = kmeans(iris, 2)
 plot(iris, col= res2$cluster)
@@ -110,6 +122,7 @@ $for(j in 2:10){
 apply(test, 2, min)
 La solution qui apparait en 3 classes n'est pas flagrante avec le tableau des minimums des inerties. La méthode du coude ne fonctionne pas très bien, elle ne fait pas apparaitre de coude. Le minimum d'inertie de  fait que diminuer en fonction du nombre de classes. 
 Une solution serait de pénaliser un grand nombre de classes par le nombre d'individus présents dans la classe.
+\end{verbatim}
 
 \subsection*{Crabs}
 
@@ -117,6 +130,7 @@ library(MASS)
 
 
 \subsection*{Mutations}
+\begin{verbatim}
 res = kmeans(mutations2, 2)
 plot(cmdscale(mutations), col=res$cluster)
 
@@ -125,4 +139,5 @@ Avec 3 vert au milieu des noirs
 4 cluster seulement un point dans le dernier
 
 tableau de contingence pour comparer les partitions table(res$cluster, res2$cluster)
+\end{verbatim}
 \end{document}

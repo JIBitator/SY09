@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.1)  21 APR 2015 12:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.1)  21 APR 2015 13:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,20 +6,19 @@ entering extended mode
 (./Rapport.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 21 languages loaded.
-(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
-\c@chapter=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -51,7 +50,7 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count88
+\Gread@gobject=\count87
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
@@ -471,23 +470,23 @@ Language: frenchb 2014/06/21 v3.1a French support from the babel system
 
 (/usr/local/texlive/2014basic/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2014/03/24 3.9k Babel common definitions
-\babel@savecnt=\count89
+\babel@savecnt=\count88
 \U@D=\dimen109
 )
 \l@acadian = a dialect from \language\l@french 
 \l@canadien = a dialect from \language\l@french 
 \FBcolonskip=\skip44
 \FBthinskip=\skip45
-\FB@interchartokenstateORI=\count90
+\FB@interchartokenstateORI=\count89
 Package babel Info: Making : an active character on input line 371.
 Package babel Info: Making ; an active character on input line 372.
 Package babel Info: Making ! an active character on input line 373.
 Package babel Info: Making ? an active character on input line 374.
 \FBguillskip=\skip46
-\FBguill@level=\count91
+\FBguill@level=\count90
 \FB@Mht=\dimen110
-\std@mcc=\count92
-\dec@mcc=\count93
+\std@mcc=\count91
+\dec@mcc=\count92
 \listindentFB=\skip47
 \labelwidthFB=\skip48
 \leftmarginFB=\skip49
@@ -656,46 +655,46 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 (./Rapport.aux)
 \openout1 = `Rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT2/wncyr/m/n on input line 68.
-LaTeX Font Info:    Try loading font information for OT2+wncyr on input line 68
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT2/wncyr/m/n on input line 59.
+LaTeX Font Info:    Try loading font information for OT2+wncyr on input line 59
 .
 
 (/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/ot2wncyr.fd
 File: OT2wncyr.fd 1999/01/14 Washington Cyrillic. S. Rahtz/Th. B.
 )
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 68.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 59.
 
 (/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    ... okay on input line 59.
 
 (/usr/local/texlive/2014basic/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count94
+\scratchcounter=\count93
 \scratchdimen=\dimen112
 \scratchbox=\box26
-\nofMPsegments=\count95
-\nofMParguments=\count96
+\nofMPsegments=\count94
+\nofMParguments=\count95
 \everyMPshowfont=\toks17
-\MPscratchCnt=\count97
+\MPscratchCnt=\count96
 \MPscratchDim=\dimen113
-\MPnumerator=\count98
-\makeMPintoPDFobject=\count99
+\MPnumerator=\count97
+\makeMPintoPDFobject=\count98
 \everyMPtoPDFconversion=\toks18
 ) (/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -744,136 +743,156 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \degres on input line 68.
-LaTeX Info: Redefining \dots on input line 68.
-LaTeX Info: Redefining \up on input line 68.
-Package color Info: Redefining color shadecolor on input line 78.
-LaTeX Font Info:    Try loading font information for T1+aett on input line 79.
+LaTeX Info: Redefining \degres on input line 59.
+LaTeX Info: Redefining \dots on input line 59.
+LaTeX Info: Redefining \up on input line 59.
+Package color Info: Redefining color shadecolor on input line 71.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 72.
  (/usr/local/texlive/2014basic/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Package color Info: Redefining color shadecolor on input line 86.
+Package color Info: Redefining color shadecolor on input line 79.
 
 
 LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 88.
+(Font)              using `T1/aett/m/n' instead on input line 81.
 
-Package color Info: Redefining color shadecolor on input line 94.
-Package color Info: Redefining color shadecolor on input line 113.
-Package color Info: Redefining color shadecolor on input line 122.
-Package color Info: Redefining color shadecolor on input line 131.
+Package color Info: Redefining color shadecolor on input line 87.
+Package color Info: Redefining color shadecolor on input line 103.
+Package color Info: Redefining color shadecolor on input line 112.
+Package color Info: Redefining color shadecolor on input line 119.
+Package color Info: Redefining color shadecolor on input line 138.
 
-Overfull \hbox (78.76447pt too wide) in paragraph at lines 139--139
-[]\T1/aett/bx/n/12 ## [1]  1.114606e+02  1.758189e+00  1.100935e-14 -3.346521e-
-16 -9.500733e-16[] 
+Overfull \hbox (53.23926pt too wide) in paragraph at lines 145--145
+[]\T1/aett/bx/n/10 ## [1]  1.393257e+01  2.197736e-01  1.376168e-15 -4.183151e-
+17 -1.187592e-16[] 
  []
 
-Package color Info: Redefining color shadecolor on input line 145.
 [1
 
 {/usr/local/texlive/2014basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package color Info: Redefining color shadecolor on input line 167.
+Package color Info: Redefining color shadecolor on input line 157.
+Package color Info: Redefining color shadecolor on input line 175.
+Package color Info: Redefining color shadecolor on input line 183.
+Package color Info: Redefining color shadecolor on input line 204.
+Package color Info: Redefining color shadecolor on input line 215.
 
-Overfull \hbox (923.7741pt too wide) in paragraph at lines 208--208
-[]\T1/aett/bx/n/12 3. Pour vérifier si elle est définie semi-positive, il suffi
+<figure/unnamed-chunk-14-1.pdf, id=9, 505.89pt x 361.35pt>
+File: figure/unnamed-chunk-14-1.pdf Graphic file (type pdf)
+
+<use figure/unnamed-chunk-14-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-14-1.pdf used on input line 216.
+(pdftex.def)             Requested size: 345.0pt x 246.43153pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 216--217
+[][] 
+ []
+
+[2]
+Package color Info: Redefining color shadecolor on input line 226.
+ [3 <./figure/unnamed-chunk-14-1.pdf>]
+Overfull \hbox (771.11792pt too wide) in paragraph at lines 275--275
+[]\T1/aett/bx/n/10 3. Pour vérifier si elle est définie semi-positive, il suffi
 t de vérifier que les valeurs propres soient positives ce qui est le cas car on
  peut considérer que -1.37*10^-17 et -2.45*10^-16 sont des valeurs nulles.[] 
  []
 
-[2]
-Overfull \hbox (29.42084pt too wide) in paragraph at lines 220--220
-[]\T1/aett/bx/n/12 qualité à calculer avec les valeurs propres b[,1]$eigen etc.
+
+Overfull \hbox (11.31934pt too wide) in paragraph at lines 288--288
+[]\T1/aett/bx/n/10 qualité à calculer avec les valeurs propres b[,1]$eigen etc.
 .. / sum[] 
  []
 
-LaTeX Font Info:    Try loading font information for TS1+aett on input line 220
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 288
 .
 (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/ts1aett.fd
 File: ts1aett.fd 
 )
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 220
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 288
 .
 
 (/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `TS1/aett/m/n' in size <12> not available
-(Font)              Font shape `TS1/cmtt/m/n' tried instead on input line 220.
+LaTeX Font Info:    Font shape `TS1/aett/m/n' in size <10> not available
+(Font)              Font shape `TS1/cmtt/m/n' tried instead on input line 288.
 
-<ex2_iris_1.png, id=12, 526.96875pt x 429.605pt>
+<ex2_iris_1.png, id=22, 526.96875pt x 429.605pt>
 File: ex2_iris_1.png Graphic file (type png)
  <use ex2_iris_1.png>
-Package pdftex.def Info: ex2_iris_1.png used on input line 228.
-(pdftex.def)             Requested size: 390.0pt x 317.95515pt.
+Package pdftex.def Info: ex2_iris_1.png used on input line 297.
+(pdftex.def)             Requested size: 345.0pt x 281.27205pt.
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 228--229
+Overfull \hbox (15.0pt too wide) in paragraph at lines 297--298
 [][] 
  []
 
-[3] [4 <./ex2_iris_1.png>] <ex2_iris_2.png, id=22, 526.96875pt x 429.605pt>
+[4] <ex2_iris_2.png, id=28, 526.96875pt x 429.605pt> [5 <./ex2_iris_1.png>]
 File: ex2_iris_2.png Graphic file (type png)
 
 <use ex2_iris_2.png>
-Package pdftex.def Info: ex2_iris_2.png used on input line 238.
-(pdftex.def)             Requested size: 272.99881pt x 222.56992pt.
- <ex2_iris_3.png, id=23, 526.96875pt x 429.605pt>
+Package pdftex.def Info: ex2_iris_2.png used on input line 307.
+(pdftex.def)             Requested size: 241.49895pt x 196.87994pt.
+ <ex2_iris_3.png, id=34, 526.96875pt x 429.605pt>
 File: ex2_iris_3.png Graphic file (type png)
 
 <use ex2_iris_3.png>
-Package pdftex.def Info: ex2_iris_3.png used on input line 253.
-(pdftex.def)             Requested size: 155.99762pt x 127.17813pt.
- [5 <./ex2_iris_2.png> <./ex2_iris_3.png>]
-<ex2_iris_4.png, id=29, 526.96875pt x 429.605pt>
+Package pdftex.def Info: ex2_iris_3.png used on input line 332.
+(pdftex.def)             Requested size: 137.9979pt x 112.50095pt.
+ [6 <./ex2_iris_2.png>]
+<ex2_iris_4.png, id=39, 526.96875pt x 429.605pt>
 File: ex2_iris_4.png Graphic file (type png)
  <use ex2_iris_4.png>
-Package pdftex.def Info: ex2_iris_4.png used on input line 261.
-(pdftex.def)             Requested size: 272.99881pt x 222.56992pt.
+Package pdftex.def Info: ex2_iris_4.png used on input line 340.
+(pdftex.def)             Requested size: 241.49895pt x 196.87994pt.
 
-<ex2_crab_1.png, id=30, 526.96875pt x 429.605pt>
+<ex2_crab_1.png, id=40, 526.96875pt x 429.605pt>
 File: ex2_crab_1.png Graphic file (type png)
  <use ex2_crab_1.png>
-Package pdftex.def Info: ex2_crab_1.png used on input line 267.
-(pdftex.def)             Requested size: 117.00119pt x 95.37868pt.
-
-<ex2_crab_3.png, id=31, 526.96875pt x 429.605pt>
+Package pdftex.def Info: ex2_crab_1.png used on input line 346.
+(pdftex.def)             Requested size: 103.50105pt x 84.37898pt.
+ [7 <./ex2_iris_3.png> <./ex2_iris_4.png>]
+<ex2_crab_3.png, id=47, 526.96875pt x 429.605pt>
 File: ex2_crab_3.png Graphic file (type png)
  <use ex2_crab_3.png>
-Package pdftex.def Info: ex2_crab_3.png used on input line 272.
-(pdftex.def)             Requested size: 195.0pt x 158.97102pt.
- [6 <./ex2_iris_4.png> <./ex2_crab_1.png>]
-<ex2_crab_4.png, id=37, 526.96875pt x 429.605pt>
+Package pdftex.def Info: ex2_crab_3.png used on input line 351.
+(pdftex.def)             Requested size: 172.5pt x 140.62947pt.
+
+<ex2_crab_4.png, id=48, 526.96875pt x 429.605pt>
 File: ex2_crab_4.png Graphic file (type png)
  <use ex2_crab_4.png>
-Package pdftex.def Info: ex2_crab_4.png used on input line 276.
-(pdftex.def)             Requested size: 195.0pt x 158.97102pt.
-
-Overfull \hbox (128.1081pt too wide) in paragraph at lines 291--291
-[]\T1/aett/bx/n/12 tableau de contingence pour comparer les partitions table(re
+Package pdftex.def Info: ex2_crab_4.png used on input line 355.
+(pdftex.def)             Requested size: 172.5pt x 140.62947pt.
+ [8 <./ex2_crab_1.png> <./ex2_crab_3.png> <./ex2_crab_4.png>]
+Overfull \hbox (95.15918pt too wide) in paragraph at lines 371--371
+[]\T1/aett/bx/n/10 tableau de contingence pour comparer les partitions table(re
 s$cluster, res2$cluster)[] 
  []
 
-[7 <./ex2_crab_3.png> <./ex2_crab_4.png>] (./Rapport.aux)
+[9] (./Rapport.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 4045 strings out of 494522
- 55344 string characters out of 6167206
- 112089 words of memory out of 5000000
- 7198 multiletter control sequences out of 15000+600000
- 19927 words of font info for 43 fonts, out of 8000000 for 9000
+ 4032 strings out of 494522
+ 55317 string characters out of 6167206
+ 113706 words of memory out of 5000000
+ 7185 multiletter control sequences out of 15000+600000
+ 19495 words of font info for 42 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  38i,6n,30p,462b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/marionDepuydt/Library/texlive/2014basic/texmf-var/fonts/pk/ljfour/jk
-nappen/ec/tctt1200.600pk></usr/local/texlive/2014basic/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014basic/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2014basic/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Rapport.pdf (7 pages, 374056 bytes).
+nappen/ec/tctt1000.600pk></usr/local/texlive/2014basic/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014basic/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014basic/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmitt10.pfb></usr/local/texlive/2014basic/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014basic/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Rapport.pdf (9 pages, 407310 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 80 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

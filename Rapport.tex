@@ -359,17 +359,28 @@ Nous retrouvons à peu près les mêmes classes avec la partitions des centre mo
 
 
 \subsection*{Mutations}
+
+\includegraphics[width=0.5\textwidth]{ex2_mutation_2.png}
+
+
+La partition avec K=3 n'est pas stable du tout. Après avoir tourné plusieurs fois l'algorithme, nous remarquons au moins 5 partitions différentes avec k=3. Nous avons représenté 2 représentations différentes de partitions dans le premier plan factoriel. Les données sont trop proches pour définir 3 classes vraiment distinctes et nous ne prenons pas assez de parametre en compte. 
+
+On tableau de contingence permet de comparer les différences entre les 2 partitions
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
-res = kmeans(mutations2, 2)
-plot(cmdscale(mutations), col=res$cluster)
-
-Avec 3 vert au milieu des noirs 
-
-4 cluster seulement un point dans le dernier
-
-tableau de contingence pour comparer les partitions table(res$cluster, res2$cluster)
+##    
+##     1 2 3
+##   1 9 0 0
+##   2 8 0 0
+##   3 0 1 2
 \end{verbatim}
+\end{kframe}
+\end{knitrout}
+\section*{Conclusion}
 
+La méthode des centres mobiles est une méthode de classification qui se révèle assez efficace sans prendre trop de temps et demander pleins d'itérations. Par contre, le choix des centres aléatoires au départ nous amène parfois à tomber sur des minimums locaux et à ne pas rendre le résultat escompté. De plus, il faut réussir à estimer soi-même le nombre de classes optimales. Cela peut être fait avec la méthode du coude mais qui s'avère ne pas donner de résultat significatif dans tous les cas comme le montre le cas des Iris. 
 
 
 \end{document}

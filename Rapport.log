@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.1)  21 APR 2015 10:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.1)  21 APR 2015 11:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -822,41 +822,57 @@ Package pdftex.def Info: ex2_iris_3.png used on input line 262.
 File: ex2_iris_4.png Graphic file (type png)
  <use ex2_iris_4.png>
 Package pdftex.def Info: ex2_iris_4.png used on input line 272.
-(pdftex.def)             Requested size: 241.49895pt x 196.87994pt.
+(pdftex.def)             Requested size: 345.0pt x 281.27205pt.
 
-Overfull \hbox (27.0393pt too wide) in paragraph at lines 287--287
-[]\T1/aett/bx/n/10 crabsquant <- crabsquant/matrix(rep(crabsquant[,4],dim(crabs
-quant)[2]),[] 
+<ex2_crab_1.png, id=32, 526.96875pt x 429.605pt>
+File: ex2_crab_1.png Graphic file (type png)
+ <use ex2_crab_1.png>
+Package pdftex.def Info: ex2_crab_1.png used on input line 281.
+(pdftex.def)             Requested size: 345.0pt x 281.27205pt.
+
+<ex2_crab_3.png, id=33, 526.96875pt x 429.605pt>
+File: ex2_crab_3.png Graphic file (type png)
+ <use ex2_crab_3.png>
+Package pdftex.def Info: ex2_crab_3.png used on input line 288.
+(pdftex.def)             Requested size: 345.0pt x 281.27205pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 288--289
+[][] 
  []
 
+[6 <./ex2_iris_3.png>] [7 <./ex2_iris_4.png>] [8 <./ex2_crab_1.png>]
+<ex2_crab_2.png, id=47, 526.96875pt x 429.605pt>
+File: ex2_crab_2.png Graphic file (type png)
+ <use ex2_crab_2.png>
+Package pdftex.def Info: ex2_crab_2.png used on input line 292.
+(pdftex.def)             Requested size: 345.0pt x 281.27205pt.
 
-Overfull \hbox (84.6792pt too wide) in paragraph at lines 287--287
-[]\T1/aett/bx/n/10 plot(crabsquant, col =kmeans(crabsquant, 4)$cluster) %% Pour
- pareil à celui du TP1[] 
- []
-
-<ex2.png, id=32, 578.16pt x 505.13719pt>
+<ex2.png, id=48, 578.16pt x 505.13719pt>
 File: ex2.png Graphic file (type png)
  <use ex2.png>
-Package pdftex.def Info: ex2.png used on input line 288.
+Package pdftex.def Info: ex2.png used on input line 293.
 (pdftex.def)             Requested size: 345.0pt x 301.41977pt.
- [6 <./ex2_iris_3.png>]
-[7 <./ex2_iris_4.png> <./ex2.png>]
-Overfull \hbox (95.15918pt too wide) in paragraph at lines 304--304
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 292--294
+[][]
+ []
+
+[9 <./ex2_crab_3.png>] [10 <./ex2_crab_2.png>]
+Overfull \hbox (95.15918pt too wide) in paragraph at lines 311--311
 []\T1/aett/bx/n/10 tableau de contingence pour comparer les partitions table(re
 s$cluster, res2$cluster)[] 
  []
 
-[8] (./Rapport.aux)
+[11 <./ex2.png>] (./Rapport.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 4016 strings out of 494522
- 54939 string characters out of 6167206
+ 4031 strings out of 494522
+ 55206 string characters out of 6167206
  114706 words of memory out of 5000000
- 7173 multiletter control sequences out of 15000+600000
+ 7185 multiletter control sequences out of 15000+600000
  20966 words of font info for 42 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  38i,7n,30p,462b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -868,10 +884,10 @@ e1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014basic/texmf-dist/fonts
 fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2014basic/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014basic/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Rapport.pdf (8 pages, 304703 bytes).
+Output written on Rapport.pdf (11 pages, 480590 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 43 compressed objects within 1 object stream
+ 85 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

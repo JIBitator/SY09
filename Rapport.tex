@@ -276,20 +276,22 @@ Une solution serait de pénaliser un grand nombre de classes par le nombre d'ind
 La première espèce (setosa) est bien différenciée suivant la méthode des centre mobiles alors que les espèces versicolor et verginia se chevauchent il est alors plus difficile pour l'algorithme de les différencer efficacement. 
 
 \subsection*{Crabs}
-\begin{verbatim}
-library(MASS)
-data(crabs)
-crabsquant <- crabs[,4:8]
-crabsquant <- crabsquant/matrix(rep(crabsquant[,4],dim(crabsquant)[2]),
-nrow=dim(crabsquant)[1],byrow=F)
-clusplot(crabsquant, kmeans(crabsquant, 4)$cluster)
-plot(crabsquant, col =kmeans(crabsquant, 4)$cluster) %% Pour pareil à celui du TP1
-\end{verbatim}
-\includegraphics[width=\textwidth]{ex2.png}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{ex2_crab_1.png}
+\caption{Méthode du cou pour déterminer le nombre optimal de partitions}
+\end{figure}
+
+Selon le graphe ci dessous, le nombre optimal de partition est 3. Le coude est bien visible pour les crabes. Cela est en contradiction avec la classification selon l'espèce et le sexe qui donne 4 classes diffèrentes.  
 
 
+\includegraphics[width=\textwidth]{ex2_crab_3.png}
 
-Nous retrouvons les mêmes classes avec la partitions des centre mobiles ou suivant la classification suivant l'espèce et le sexe. Cela montre bien que les autres variables permettent de déterminer l'espèce et le sexe d'un crabe. 
+J'ai donc effectué les 2 classifications avec 3 et 4 partitions. 
+
+\includegraphics[width=\textwidth]{ex2_crab_4.png}
+
+Nous retrouvons à peu près les mêmes classes avec la partitions des centre mobiles ou suivant la classification suivant l'espèce et le sexe. Cela montre bien que les autres variables permettent de déterminer l'espèce et le sexe d'un crabe. 
 
 \subsection*{Mutations}
 \begin{verbatim}

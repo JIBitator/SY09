@@ -1,5 +1,5 @@
 % !Rnw weave = knitr
-
+%% TO add package copy into /usr/local/texlive/2010basic/texmf-dist/tex/latex/base/ .sty
 \documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
 %% maxwidth is the original width if it is less than linewidth
 %% otherwise use linewidth (to make sure the graphics do not exceed the margin)
@@ -66,14 +66,7 @@
 
 
 
-<<<<<<< HEAD
-
-
-
-
-
-=======
-On centre tout d'abord la matrice X à l'aide de la matrice de centrage Q8, ça nous servira plus tard :
+On centre tout d'abord la matrice X à l'aide de la matrice de centrage Q8, cela nous servira plus tard :
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -92,9 +85,6 @@ On calcule la matrice des distances euclidiennes D2 :
 \end{knitrout}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{D2}
-\end{alltt}
 \begin{verbatim}
 ##       1     2     3     4     5     6     7     8
 ## 1  0.00 37.25 67.25  1.00  1.00 55.25  1.25 58.25
@@ -108,7 +98,7 @@ On calcule la matrice des distances euclidiennes D2 :
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
-Après avoir obtenu cette précieuse matrice, on peut calculer la matrice des produits scalaires de 2 façons :
+Après avoir obtenu cette matrice, on peut calculer la matrice des produits scalaires de 2 façons :
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -125,56 +115,133 @@ Mais normalement, on n'aurait pas accès à X directement, il faut la déduire d
 \end{alltt}
 \end{kframe}
 \end{knitrout}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{verbatim}
+##        [,1]   [,2]   [,3]   [,4]   [,5]   [,6]   [,7]   [,8]
+## [1,]  13.50  -8.78 -16.56  16.25  11.07 -13.81  12.44 -14.12
+## [2,]  -8.78   6.19  11.16 -11.03  -7.71   8.91  -8.84  10.10
+## [3,] -16.56  11.16  20.63 -20.31 -14.00  16.88 -15.87  18.07
+## [4,]  16.25 -11.03 -20.31  20.00  13.82 -16.56  15.69 -17.87
+## [5,]  11.07  -7.71 -14.00  13.82   9.63 -11.25  11.00 -12.56
+## [6,] -13.81   8.91  16.88 -16.56 -11.25  14.13 -12.62  14.32
+## [7,]  12.44  -8.84 -15.87  15.69  11.00 -12.62  12.63 -14.43
+## [8,] -14.12  10.10  18.07 -17.87 -12.56  14.32 -14.43  16.50
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
 
 Il reste à vérifier que W soit semi définie-positive, pour savoir si la matrice des distances était bien euclidienne :
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{L} \hlkwb{=} \hlkwd{eigen}\hlstd{(W)}\hlopt{$}\hlstd{values}
-\hlstd{L}
-\end{alltt}
-\begin{verbatim}
-## [1]  1.114606e+02  1.758189e+00  1.100935e-14 -3.346521e-16 -9.500733e-16
-## [6] -1.069879e-15 -1.845951e-15 -6.005347e-15
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
-W est bien semi définie-positive, on va juste arrondir à zero les valeurs négatives très petites, et diagonaliser L :
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{L[L}\hlopt{<}\hlnum{0}\hlstd{]} \hlkwb{=} \hlnum{0}
-\hlstd{L} \hlkwb{=} \hlkwd{diag}\hlstd{(L)}
-\hlstd{L}
+\hlkwd{eigen}\hlstd{(W}\hlopt{/}\hlnum{8}\hlstd{)}\hlopt{$}\hlstd{values}
 \end{alltt}
 \begin{verbatim}
-##          [,1]     [,2]         [,3] [,4] [,5] [,6] [,7] [,8]
-## [1,] 111.4606 0.000000 0.000000e+00    0    0    0    0    0
-## [2,]   0.0000 1.758189 0.000000e+00    0    0    0    0    0
-## [3,]   0.0000 0.000000 1.100935e-14    0    0    0    0    0
-## [4,]   0.0000 0.000000 0.000000e+00    0    0    0    0    0
-## [5,]   0.0000 0.000000 0.000000e+00    0    0    0    0    0
-## [6,]   0.0000 0.000000 0.000000e+00    0    0    0    0    0
-## [7,]   0.0000 0.000000 0.000000e+00    0    0    0    0    0
-## [8,]   0.0000 0.000000 0.000000e+00    0    0    0    0    0
+## [1]  1.393257e+01  2.197736e-01  1.376168e-15 -4.183151e-17 -1.187592e-16
+## [6] -1.337349e-16 -2.307438e-16 -7.506684e-16
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
-Matrice des vecteurs propres :
+
+W est bien semi définie-positive, car ses valeurs propres sont positives ou nulles. Nous avons mis à zéro les valeurs négatives (erreurs d'arrondis de calcul du processeur), et diagonalisé les valeurs propres.
+
+
+
+Matrice L des valeurs propres :
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{verbatim}
+##          [,1]      [,2]         [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,] 13.93257 0.0000000 0.000000e+00    0    0    0    0    0
+## [2,]  0.00000 0.2197736 0.000000e+00    0    0    0    0    0
+## [3,]  0.00000 0.0000000 1.376168e-15    0    0    0    0    0
+## [4,]  0.00000 0.0000000 0.000000e+00    0    0    0    0    0
+## [5,]  0.00000 0.0000000 0.000000e+00    0    0    0    0    0
+## [6,]  0.00000 0.0000000 0.000000e+00    0    0    0    0    0
+## [7,]  0.00000 0.0000000 0.000000e+00    0    0    0    0    0
+## [8,]  0.00000 0.0000000 0.000000e+00    0    0    0    0    0
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+Ensuite nous avons calculé la matrice des vecteurs propres, et l'avons normée correctement :
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlstd{V} \hlkwb{=} \hlkwd{eigen}\hlstd{(W)}\hlopt{$}\hlstd{vectors}
+\hlstd{V} \hlkwb{=} \hlstd{V}\hlopt{*}\hlkwd{sqrt}\hlstd{(}\hlnum{8}\hlstd{)}  \hlcom{# on norme les vectors propres au sens de (1/n)*I}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
->>>>>>> a03dc5d6e1e9ed556e90299424c3c7fad9660aca
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{round}\hlstd{(V,}\hlnum{2}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]
+## [1,]  0.97  1.29  0.00  0.00  0.00  0.00  0.00  2.32
+## [2,] -0.66  0.63  1.57 -1.70 -0.47 -1.08 -0.65 -0.07
+## [3,] -1.22 -0.38 -0.92  0.83  0.02 -1.15 -1.73  0.72
+## [4,]  1.20  0.16 -0.93 -1.25  0.85  0.62 -1.63 -0.59
+## [5,]  0.83 -0.52 -0.67 -0.26 -2.54 -0.13 -0.21 -0.06
+## [6,] -0.99 -1.51 -0.23 -1.30  0.07  1.15  0.29  1.25
+## [7,]  0.94 -1.09 -0.54 -0.62  0.75 -1.94  0.95  0.21
+## [8,] -1.07  1.43 -1.74 -0.83 -0.16 -0.20  0.95 -0.34
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 
 
+Cela nous permet d'en déduire une version approximée par AFTD de X :
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Xaftd} \hlkwb{=} \hlstd{V} \hlopt{%*%} \hlkwd{sqrt}\hlstd{(L)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Voici une comparaison graphique de X et Xaftd :
 
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-14-1} 
+
+\end{knitrout}
+
+
+On constate que les résultats sont très proches (aux dissimilarités isométriques près).
+
+Voici une fonction qui fait l'AFTD d'un tableau de distance, et fait un plot du résultat :
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{AFTD} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{D}\hlstd{)\{}
+    \hlstd{D} \hlkwb{=} \hlkwd{as.matrix}\hlstd{(D)}
+    \hlstd{D} \hlkwb{=} \hlstd{D}\hlopt{^}\hlnum{2}
+    \hlstd{Q} \hlkwb{=} \hlkwd{diag}\hlstd{(}\hlkwd{nrow}\hlstd{(D))}\hlopt{-}\hlkwd{matrix}\hlstd{(}\hlnum{1}\hlstd{,} \hlkwd{nrow}\hlstd{(D),} \hlkwd{nrow}\hlstd{(D))}\hlopt{/}\hlkwd{nrow}\hlstd{(D)}
+    \hlstd{W} \hlkwb{=} \hlstd{(}\hlopt{-}\hlnum{1}\hlopt{/}\hlnum{2}\hlstd{)}\hlopt{*}\hlstd{Q}\hlopt{%*%}\hlstd{D}\hlopt{%*%}\hlstd{Q}
+    \hlstd{V} \hlkwb{=} \hlkwd{eigen}\hlstd{(W}\hlopt{/}\hlkwd{nrow}\hlstd{(W))}\hlopt{$}\hlstd{vectors}
+    \hlstd{V} \hlkwb{=} \hlstd{V}\hlopt{*}\hlkwd{sqrt}\hlstd{(}\hlkwd{nrow}\hlstd{(D))}
+    \hlstd{L} \hlkwb{=} \hlkwd{eigen}\hlstd{(W}\hlopt{/}\hlkwd{nrow}\hlstd{(W))}\hlopt{$}\hlstd{values}
+    \hlstd{L[L}\hlopt{<}\hlnum{0}\hlstd{]} \hlkwb{=} \hlnum{0}
+    \hlstd{L} \hlkwb{=} \hlkwd{diag}\hlstd{(L)}
+
+    \hlstd{C} \hlkwb{=} \hlstd{V}\hlopt{%*%}\hlkwd{sqrt}\hlstd{(L)}
+    \hlkwd{plot}\hlstd{(C)}
+\hlstd{\}}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 
 
 \begin{verbatim}
@@ -227,54 +294,98 @@ on refait de même avec cmdscale(mutation, 3, T) jusqu'à 5
 library(cluster)
 clusplot 
 \subsection*{Iris}
+<<<<<<< HEAD
+
+\begin{verbatim}
+iris = iris[ ,1:4]
+res2 = kmeans(iris, 2)
+plot(iris, col= res2$cluster)
+clusplot(iris, res2$cluster)i
+res2 = kmeans(iris, 3)
+> plot(iris, col= res2$cluster)
+
+2 types différents : 143 ou 78.9 pour l'inertie des classes (tot.withinss)
+
+$for(j in 2:10){
+=======
+
+\subsubsection*{Question 1 - Différents nombres de partiton}
+
 \begin{figure}
-<<iris, fig=TRUE>>=
-par(mfrow=c(1,3))
-clusplot(iris, res2$cluster)
-res3 = kmeans(iris, 3)
-clusplot(iris, res3$cluster)
-res4 = kmeans(iris, 4)
-clusplot(iris, res4$cluster)
-@$
+\includegraphics[width=\textwidth]{ex2_iris_1.png}
 \caption{Visualisation de kmeans avec 2, 3 et 4 partitions}
 \end{figure}
-\subsubsection*{Question 1 - Différents nombres de partiton}
+
 Premièrement, nous remarquons que les partitions n'ont pas toutes le même nombre d'éléments. 
-Ensuite, elle varie suivant le nombre de partitions. En effet, nous pourrions penser qu'entre eux 3 et 4 partitions, l'ajout d'une partition subdiviserait une partition déjà existante. Comme le montre les graphes ci dessous cela n'est pas le cas. En effet les 3 partitions de droit pour K=4 ne sont pas pas contenus dans entièrement 2 partitions de K=3. Toutes les partitions sont redéfinis à chaque fois que nous augmontons le nombre.   
+Ensuite, elle varie suivant le nombre de partitions. En effet, nous pourrions penser qu'entre eux 3 et 4 partitions, l'ajout d'une partition subdiviserait une partition déjà existante. Comme le montre les graphes ci dessous cela n'est pas le cas. En effet les 3 partitions de droit pour K=4 ne sont pas pas contenus dans entièrement 2 partitions de K=3. Toutes les partitions sont redéfinis à chaque fois que nous augmontons le nombre. 
+Nous savons qu'il existe 3 espèces distinctes d'Iris représentées la représentation avec K=3 représente assez fidélement les 3 espèces. 
 \subsubsection*{Question 2 - Stabilité des partitions}
-De plus, même pour un même K, dans notre cas k=3, les partitions peuvent changer. Ici, nous avons deux cas différents avec des inerties de classes de 143 ou 78.9. Cela est du au choix aléatoire des centres au début de l'algorithme.
-%%TODO add graphe si place 
+
+De plus, même pour un même K, dans notre cas k=3, les partitions peuvent changer. Ici, nous avons deux cas différents avec des inerties de classes de 143 ou 78.9. Cela est du au choix aléatoire des centres au début de l'algorithme, nous tombons parfois sur un minima local. Cela une partition correspond à la classification selon les espéces il s'agit de celle avec le miminum d'inertie intra-classes
+\begin{figure}
+\includegraphics[width=\textwidth]{ex2_iris_2.png}
+\caption{Visualisation des 2 différentes partitions avec respectivement 78.85 et 142.75 de d'inertie intra-classes}
+\end{figure}
+ 
 \subsubsection*{Question 3 - Nombre de partitions optimales}
 
 \begin{verbatim}
-$for(j in 2:10){
+$test <- matrix(0, 9, 100)$
+$for(j in 1:9){
+>>>>>>> origin/master
   for(i in 1:100){
-    test[j, i] = kmeans(iris, j)$tot.withinss
+    test[j, i] = kmeans(iris, j+1)$tot.withinss
   }
 }$
+<<<<<<< HEAD
 apply(test, 2, min)
+La solution qui apparait en 3 classes n'est pas flagrante avec le tableau des minimums des inerties. La méthode du coude ne fonctionne pas très bien, elle ne fait pas apparaitre de coude. Le minimum d'inertie de  fait que diminuer en fonction du nombre de classes. 
+Une solution serait de pénaliser un grand nombre de classes par le nombre d'individus présents dans la classe.
 \end{verbatim}
-%%TODO add graphe 
+
+\subsection*{Crabs}
+
+library(MASS)
+
+=======
+apply(test, 1, min)
+\end{verbatim}
+
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{ex2_iris_3.png}
+\caption{Minimum centre d'inertie suivant le nombre de partition}
+\end{figure}
+
 La solution optimale semble être en 3 classes. Pourtant celle-ci n'est pas flagrante avec le tableau des minimums des inerties. La méthode du coude ne fonctionne pas très bien, elle ne fait pas apparaitre de coude. Le minimum d'inertie de  fait que diminuer en fonction du nombre de classes. 
 Une solution serait de pénaliser un grand nombre de classes par le nombre d'individus présents dans la classe.
 
 \subsubsection*{Question 4 - Partitions réelles}
 
-%%TODO quelle fonction utilisée? 
+\begin{figure}
+\includegraphics[width=\textwidth]{ex2_iris_4.png}
+\caption{Comparaison entre classement réelles des espèces à droite et avec la méthode des centre mobiles}
+\end{figure}
+
+La première espèce (setosa) est bien différenciée suivant la méthode des centre mobiles alors que les espèces versicolor et verginia se chevauchent il est alors plus difficile pour l'algorithme de les différencer efficacement. 
 
 \subsection*{Crabs}
-\begin{verbatim}
-library(MASS)
-data(crabs)
-crabsquant <- crabs[,4:8]
-crabsquant <- crabsquant/matrix(rep(crabsquant[,4],dim(crabsquant)[2]),
-nrow=dim(crabsquant)[1],byrow=F)
-clusplot(crabsquant, kmeans(crabsquant, 4)$cluster)
-plot(crabsquant, col =kmeans(crabsquant, 4)$cluster) %% Pour pareil à celui du TP1
-\end{verbatim}
-\includegraphics[width=\textwidth]{ex2.png}
 
-Nous retrouvons les mêmes classes avec la partitions des centre mobiles ou suivant la classification suivant l'espèce et le sexe. Cela montre bien que les autres variables permettent de déterminer l'espèce et le sexe d'un crabe. 
+\begin{figure}
+\includegraphics[width=\textwidth]{ex2_crab_1.png}
+\caption{Méthode du cou pour déterminer le nombre optimal de partitions}
+\end{figure}
+
+Selon le graphe ci dessous, le nombre optimal de partition est 3. Le coude est bien visible pour les crabes. Cela est en contradiction avec la classification selon l'espèce et le sexe qui donne 4 classes diffèrentes.  
+
+
+\includegraphics[width=\textwidth]{ex2_crab_3.png}
+
+J'ai donc effectué les 2 classifications avec 3 et 4 partitions. 
+
+\includegraphics[width=\textwidth]{ex2_crab_4.png}
+
+Nous retrouvons à peu près les mêmes classes avec la partitions des centre mobiles ou suivant la classification suivant l'espèce et le sexe. Cela montre bien que les autres variables permettent de déterminer l'espèce et le sexe d'un crabe. 
+>>>>>>> origin/master
 
 \subsection*{Mutations}
 \begin{verbatim}
@@ -289,8 +400,5 @@ tableau de contingence pour comparer les partitions table(res$cluster, res2$clus
 \end{verbatim}
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> a03dc5d6e1e9ed556e90299424c3c7fad9660aca
 \end{document}

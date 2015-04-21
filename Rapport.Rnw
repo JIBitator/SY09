@@ -149,7 +149,7 @@ eigen(W)
   
 \end{verbatim}
   
-\section*{Exercice 2}
+
 
 \begin{verbatim}
 m = as.vector(mutation)
@@ -162,37 +162,75 @@ on refait de même avec cmdscale(mutation, 3, T) jusqu'à 5
 
 \end{verbatim}
 
-\section*{Exercice 3} 
+\section*{Exercice 2} 
 
-
-
-library(cluster)
-clusplot 
 \subsection*{Iris}
 
+
+\subsubsection*{Question 1 - Différents nombres de partiton}
+
+\includegraphics[width=\textwidth]{ex2_iris_1.png}
+
+
+Premièrement, nous remarquons que les partitions n'ont pas toutes le même nombre d'éléments. 
+Ensuite, elle varie suivant le nombre de partitions. En effet, nous pourrions penser qu'entre eux 3 et 4 partitions, l'ajout d'une partition subdiviserait une partition déjà existante. Comme le montre les graphes ci dessous cela n'est pas le cas. En effet les 3 partitions de droit pour K=4 ne sont pas pas contenus dans entièrement 2 partitions de K=3. Toutes les partitions sont redéfinis à chaque fois que nous augmontons le nombre. 
+Nous savons qu'il existe 3 espèces distinctes d'Iris représentées la représentation avec K=3 représente assez fidélement les 3 espèces. 
+\subsubsection*{Question 2 - Stabilité des partitions}
+
+De plus, même pour un même K, dans notre cas k=3, les partitions peuvent changer. Ici, nous avons deux cas différents avec des inerties de classes de 78.9 ou 143. Cela est du au choix aléatoire des centres au début de l'algorithme, nous tombons parfois sur un minima local. Cela une partition correspond à la classification selon les espéces il s'agit de celle avec le miminum d'inertie intra-classes
+
+\includegraphics[width=0.7\textwidth]{ex2_iris_2.png}
+
+ 
+\subsubsection*{Question 3 - Nombre de partitions optimales}
+
 \begin{verbatim}
-iris = iris[ ,1:4]
-res2 = kmeans(iris, 2)
-plot(iris, col= res2$cluster)
-clusplot(iris, res2$cluster)i
-res2 = kmeans(iris, 3)
-> plot(iris, col= res2$cluster)
-
-2 types différents : 143 ou 78.9 pour l'inertie des classes (tot.withinss)
-
-$for(j in 2:10){
+$test <- matrix(0, 9, 100)$
+$for(j in 1:9){
   for(i in 1:100){
-    test[j, i] = kmeans(iris, j)$tot.withinss
+    test[j, i] = kmeans(iris, j+1)$tot.withinss
   }
 }$
+
 apply(test, 2, min)
+\end{verbatim}
+
 La solution qui apparait en 3 classes n'est pas flagrante avec le tableau des minimums des inerties. La méthode du coude ne fonctionne pas très bien, elle ne fait pas apparaitre de coude. Le minimum d'inertie de  fait que diminuer en fonction du nombre de classes. 
 Une solution serait de pénaliser un grand nombre de classes par le nombre d'individus présents dans la classe.
-\end{verbatim}
+
 
 \subsection*{Crabs}
 
-library(MASS)
+
+
+
+\includegraphics[width=0.4\textwidth]{ex2_iris_3.png}
+
+
+La solution optimale semble être en 3 classes. Pourtant celle-ci n'est pas flagrante avec le tableau des minimums des inerties. La méthode du coude ne fonctionne pas très bien, elle ne fait pas apparaitre de coude. Le minimum d'inertie de  fait que diminuer en fonction du nombre de classes. 
+Une solution serait de pénaliser un grand nombre de classes par le nombre d'individus présents dans la classe.
+
+\subsubsection*{Question 4 - Partitions réelles}
+
+\includegraphics[width=0.7\textwidth]{ex2_iris_4.png}
+
+La première espèce (setosa) est bien différenciée suivant la méthode des centre mobiles alors que les espèces versicolor et verginia se chevauchent il est alors plus difficile pour l'algorithme de les différencer efficacement. 
+
+\subsection*{Crabs}
+
+\includegraphics[width=0.3\textwidth]{ex2_crab_1.png}
+
+Selon le graphe ci dessous de la méthode du coude, le nombre optimal de partition est 3. Le coude est bien visible pour les crabes. Cela est en contradiction avec la classification selon l'espèce et le sexe qui donne 4 classes diffèrentes.  
+
+
+\includegraphics[width=0.5\textwidth]{ex2_crab_3.png}
+
+J'ai donc effectué les 2 classifications avec 3 et 4 partitions. 
+
+\includegraphics[width=0.5\textwidth]{ex2_crab_4.png}
+
+Nous retrouvons à peu près les mêmes classes avec la partitions des centre mobiles ou suivant la classification suivant l'espèce et le sexe. Cela montre bien que les autres variables permettent de déterminer l'espèce et le sexe d'un crabe. 
+
 
 
 \subsection*{Mutations}

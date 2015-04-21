@@ -12,13 +12,14 @@
 
 \section*{Exercice 1}
 
-
+\subsection*{Partie théorique}
 
 
 
 <<echo=FALSE>>=
 load("exo1.RData")
 @
+
 
 On centre tout d'abord la matrice X à l'aide de la matrice de centrage Q8, cela nous servira plus tard :
 <<eval=FALSE>>=
@@ -102,7 +103,7 @@ On constate que les résultats sont très proches (aux dissimilarités isométri
 Voici une fonction qui fait l'AFTD d'un tableau de distance, et fait un plot du résultat :
 
 <<eval=FALSE>>=
-AFTD = function(D){
+AFTD = function(D,k=2){
     D = as.matrix(D)
     D = D^2
     Q = diag(nrow(D))-matrix(1, nrow(D), nrow(D))/nrow(D)
@@ -114,14 +115,31 @@ AFTD = function(D){
     L = diag(L)
     
     C = V%*%sqrt(L)
-    plot(C)
+    plot(C[,1:k])
+    return(C[,1:k])
 }
 @
 
 
-  
+\subsection{Données de mutations}
+
+
+<<echo=FALSE>>=
+load("exo2.RData")
+@
+
+On obtient des résulats similaires (en isométries près) en utilisant la fonction AFTD de l'exercice précédent, et la fonction cmdscale. 
+
+<<fig.height=5, echo=F>>=
+par(mfrow=c(1,2))
+AFTD(mutations)
+plot(cmdscale(mutations))
+@
+
 
 \section*{Exercice 2} 
+
+
 
 \subsection*{Iris}
 

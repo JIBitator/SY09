@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.1)  20 APR 2015 19:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.1)  21 APR 2015 10:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -75,316 +74,19 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 (/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/alltt.sty
 Package: alltt 1997/06/16 v2.0g defines alltt environment
 )
-(/usr/local/texlive/2014basic/texmf-dist/tex/latex/upquote/upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
-tim
-)
-(./Rapport.aux)
-\openout1 = `Rapport.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-
-(/usr/local/texlive/2014basic/texmf-dist/tex/context/base/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count88
-\scratchdimen=\dimen109
-\scratchbox=\box26
-\nofMPsegments=\count89
-\nofMParguments=\count90
-\everyMPshowfont=\toks15
-\MPscratchCnt=\count91
-\MPscratchDim=\dimen110
-\MPnumerator=\count92
-\makeMPintoPDFobject=\count93
-\everyMPtoPDFconversion=\toks16
-) (/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/local/texlive/2014basic/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2014basic/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-)) (/usr/local/texlive/2014basic/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2014basic/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-Missing character: There is no Ã in font cmtt10!
-Missing character: There is no © in font cmtt10!
-Missing character: There is no Ã in font cmtt10!
-Missing character: There is no © in font cmtt10!
-Missing character: There is no Ã in font cmtt10!
-Missing character: There is no © in font cmtt10!
-Missing character: There is no Ã in font cmtt10!
-Missing character: There is no © in font cmtt10!
-Missing character: There is no Ã in font cmtt10!
-Missing character: There is no © in font cmtt10!
-Missing character: There is no Ã in font cmtt10!
-Missing character: There is no © in font cmtt10!
-
-Overfull \hbox (752.24043pt too wide) in paragraph at lines 100--100
-[]\OT1/cmtt/m/n/10 3. Pour vrifier si elle est dfinie semi-positive, il suffit 
-de vrifier que les valeurs propres soient positives ce qui est le cas car on pe
-ut considrer que -1.37*10^-17 et -2.45*10^-16 sont des valeurs nulles.[] 
- []
-
-Missing character: There is no Ã in font cmtt10!
-Missing character: There is no   in font cmtt10!
-Missing character: There is no Ã in font cmtt10!
-Missing character: There is no ¨ in font cmtt10!
-Missing character: There is no Ã in font cmtt10!
-Missing character: There is no © in font cmtt10!
-Missing character: There is no Ã in font cmtt10!
-Missing character: There is no   in font cmtt10!
-
-Overfull \hbox (1.49698pt too wide) in paragraph at lines 113--113
-[]\OT1/cmtt/m/n/10 qualit  calculer avec les valeurs propres b[,1]$eigen etc...
- / sum[] 
- []
-
-Missing character: There is no Ã in font cmtt10!
-Missing character: There is no ª in font cmtt10!
-Missing character: There is no Ã in font cmtt10!
-Missing character: There is no   in font cmtt10!
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 125.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 125.
-
-Underfull \hbox (badness 1931) in paragraph at lines 123--131
-[]\OT1/cmr/m/n/10 <<iris, fig=TRUE>>= par(mfrow=c(1,3)) clus-plot(iris, res2$\O
-ML/cmm/m/it/10 cluster\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 res\OT1/cmr/m/n/10 3 =
- []
-
-[1
-
-{/usr/local/texlive/2014basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Missing character: There is no Ã in font cmbx10!
-Missing character: There is no © in font cmbx10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¨ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ª in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no   in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¨ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no   in font cmr10!
-Missing character: There is no Ã in font cmbx10!
-Missing character: There is no © in font cmbx10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ª in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ª in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ª in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¨ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no © in font cmr10!
-Missing character: There is no Ã in font cmbx10!
-Missing character: There is no © in font cmbx10!
-
-Overfull \hbox (27.74675pt too wide) in paragraph at lines 166--166
-[]\OT1/cmtt/m/n/10 crabsquant <- crabsquant/matrix(rep(crabsquant[,4],dim(crabs
-quant)[2]),[] 
- []
-
-[2] <ex2.png, id=14, 578.16pt x 505.13719pt>
-File: ex2.png Graphic file (type png)
- <use ex2.png>
-Package pdftex.def Info: ex2.png used on input line 167.
-(pdftex.def)             Requested size: 345.0pt x 301.41977pt.
-
-Overfull \hbox (95.99615pt too wide) in paragraph at lines 179--179
-[]\OT1/cmtt/m/n/10 tableau de contingence pour comparer les partitions table(re
-s$cluster, res2$cluster)[] 
- []
-
-[3 <./ex2.png>] (./Rapport.aux) ) 
-Here is how much of TeX's memory you used:
- 1613 strings out of 494522
- 23637 string characters out of 6167206
- 80627 words of memory out of 5000000
- 4874 multiletter control sequences out of 15000+600000
- 5326 words of font info for 20 fonts, out of 8000000 for 9000
- 319 hyphenation exceptions out of 8191
- 38i,5n,23p,457b,257s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014basic/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014basic/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014basic/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2014basic/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014basic/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Rapport.pdf (3 pages, 112616 bytes).
-PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 23 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
-
-=======
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.16)  20 APR 2015 16:25
-entering extended mode
-**Rapport.tex
-(C:\Users\JB\Desktop\sy09\tp2\Rapport.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
- lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
-ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
-an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
-ishmax, welsh, loaded.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
-)
-\c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
-\abovecaptionskip=\skip41
-\belowcaptionskip=\skip42
-\bibindent=\dimen102
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks14
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
-)
-Package graphics Info: Driver file: pdftex.def on input line 91.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count87
-))
-\Gin@req@height=\dimen103
-\Gin@req@width=\dimen104
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package color Info: Driver file: pdftex.def on input line 130.
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\framed\framed.sty"
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip43
-\fb@frw=\dimen105
-\fb@frh=\dimen106
-\FrameRule=\dimen107
-\FrameSep=\dimen108
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\alltt.sty"
-Package: alltt 1997/06/16 v2.0g defines alltt environment
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2014/04/30 v1.2b Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -534,7 +236,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -565,7 +267,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -589,33 +291,33 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\aeguill\aeguill.sty"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/aeguill.sty
 Package: aeguill 2003/08/02 1.02 AE fonts with french guillemets (D. Roegel)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\ae.sty"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/ae/ae.sty
 Package: ae 2001/02/12 1.3 Almost European Computer Modern
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 )
 LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cyrillic\ot2enc.def"
-File: ot2enc.def 2001/08/11 v3.3a Cyrillic encoding definition file
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/ot2enc.def
+File: OT2enc.def 1996/03/08 OT2 encoding setup. S Rahtz, M Ellert, F Widmann
 Now handling font encoding OT2 ...
 ... processing UTF-8 mapping file for font encoding OT2
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot2enc.dfu"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/ot2enc.dfu
 File: ot2enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00AB (decimal 171)
    defining Unicode char U+00BB (decimal 187)
@@ -756,46 +458,46 @@ File: ot2enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+201D (decimal 8221)
    defining Unicode char U+2116 (decimal 8470)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 )))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
-Package: babel 2008/07/08 v3.8m The Babel package
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2014/03/24 3.9k The Babel package
 
-*************************************
-* Local config file bblopts.cfg used
-*
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
-File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\frenchb.ldf"
-Language: frenchb 2009/03/16 v2.3d French support from the babel system
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/babel-french/frenchb.ldf
+Language: frenchb 2014/06/21 v3.1a French support from the babel system
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
-File: babel.def 2008/07/08 v3.8m Babel common definitions
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2014/03/24 3.9k Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen109
 )
-Package babel Info: Making : an active character on input line 120.
-Package babel Info: Making ; an active character on input line 121.
-Package babel Info: Making ! an active character on input line 122.
-Package babel Info: Making ? an active character on input line 123.
+\l@acadian = a dialect from \language\l@french 
+\l@canadien = a dialect from \language\l@french 
+\FBcolonskip=\skip44
+\FBthinskip=\skip45
+\FB@interchartokenstateORI=\count89
+Package babel Info: Making : an active character on input line 371.
+Package babel Info: Making ; an active character on input line 372.
+Package babel Info: Making ! an active character on input line 373.
+Package babel Info: Making ? an active character on input line 374.
+\FBguillskip=\skip46
+\FBguill@level=\count90
 \FB@Mht=\dimen110
-\std@mcc=\count89
-\dec@mcc=\count90
+\std@mcc=\count91
+\dec@mcc=\count92
+\listindentFB=\skip47
+\labelwidthFB=\skip48
+\leftmarginFB=\skip49
 \parindentFFN=\dimen111
-
-*************************************
-* Local config file frenchb.cfg used
-*
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\frenchb.cfg")))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\carlisle\scalefnt.sty")
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\upquote\upquote.sty"
+))
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -810,12 +512,12 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/ts1enc.dfu
 File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
@@ -950,7 +652,9 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 ))
-(C:\Users\JB\Desktop\sy09\tp2\Rapport.aux)
+(./Rapport.aux)
+\openout1 = `Rapport.aux'.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
@@ -963,140 +667,211 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 59.
-LaTeX Font Info:    Try loading font information for OT2+cmr on input line 59.
+LaTeX Font Info:    Checking defaults for OT2/wncyr/m/n on input line 59.
+LaTeX Font Info:    Try loading font information for OT2+wncyr on input line 59
+.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cyrillic\ot2cmr.fd"
-File: ot2cmr.fd 2001/08/11 v3.2c Computer Modern Cyrillic font definitions
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/ot2wncyr.fd
+File: OT2wncyr.fd 1999/01/14 Washington Cyrillic. S. Rahtz/Th. B.
 )
 LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 59.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 59.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+(/usr/local/texlive/2014basic/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count91
+\scratchcounter=\count93
 \scratchdimen=\dimen112
 \scratchbox=\box26
-\nofMPsegments=\count92
-\nofMParguments=\count93
+\nofMPsegments=\count94
+\nofMParguments=\count95
 \everyMPshowfont=\toks17
-\MPscratchCnt=\count94
+\MPscratchCnt=\count96
 \MPscratchDim=\dimen113
-\MPnumerator=\count95
-\makeMPintoPDFobject=\count96
+\MPnumerator=\count97
+\makeMPintoPDFobject=\count98
 \everyMPtoPDFconversion=\toks18
+) (/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
+
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+)) (/usr/local/texlive/2014basic/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2014basic/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 LaTeX Info: Redefining \degres on input line 59.
 LaTeX Info: Redefining \dots on input line 59.
 LaTeX Info: Redefining \up on input line 59.
-Package color Info: Redefining color shadecolor on input line 71.
-LaTeX Font Info:    Try loading font information for T1+aett on input line 72.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
+Package color Info: Redefining color shadecolor on input line 78.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 79.
+ (/usr/local/texlive/2014basic/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Package color Info: Redefining color shadecolor on input line 79.
+Package color Info: Redefining color shadecolor on input line 86.
 
 
 LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 81.
+(Font)              using `T1/aett/m/n' instead on input line 88.
 
-Package color Info: Redefining color shadecolor on input line 87.
-Package color Info: Redefining color shadecolor on input line 106.
-Package color Info: Redefining color shadecolor on input line 115.
-Package color Info: Redefining color shadecolor on input line 124.
+Package color Info: Redefining color shadecolor on input line 94.
+Package color Info: Redefining color shadecolor on input line 113.
+Package color Info: Redefining color shadecolor on input line 122.
+Package color Info: Redefining color shadecolor on input line 131.
 
-Overfull \hbox (53.23926pt too wide) in paragraph at lines 132--132
+Overfull \hbox (53.23926pt too wide) in paragraph at lines 139--139
 []\T1/aett/bx/n/10 ## [1]  1.114606e+02  1.758189e+00  1.100935e-14 -3.346521e-
 16 -9.500733e-16[] 
  []
 
-Package color Info: Redefining color shadecolor on input line 138.
+Package color Info: Redefining color shadecolor on input line 145.
 [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Package color Info: Redefining color shadecolor on input line 160.
+{/usr/local/texlive/2014basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Package color Info: Redefining color shadecolor on input line 167.
 
-Overfull \hbox (771.11792pt too wide) in paragraph at lines 200--200
+Overfull \hbox (771.11792pt too wide) in paragraph at lines 208--208
 []\T1/aett/bx/n/10 3. Pour vérifier si elle est définie semi-positive, il suffi
 t de vérifier que les valeurs propres soient positives ce qui est le cas car on
  peut considérer que -1.37*10^-17 et -2.45*10^-16 sont des valeurs nulles.[] 
  []
 
 [2]
-Overfull \hbox (11.31934pt too wide) in paragraph at lines 213--213
+Overfull \hbox (11.31934pt too wide) in paragraph at lines 221--221
 []\T1/aett/bx/n/10 qualité à calculer avec les valeurs propres b[,1]$eigen etc.
 .. / sum[] 
  []
 
-LaTeX Font Info:    Try loading font information for TS1+aett on input line 213
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 221
 .
-(C:/PROGRA~1/R/R-31~1.2/share/texmf/tex/latex\ts1aett.fd
+(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/ts1aett.fd
 File: ts1aett.fd 
 )
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 213
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 221
 .
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmtt.fd"
+(/usr/local/texlive/2014basic/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `TS1/aett/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmtt/m/n' tried instead on input line 213.
+(Font)              Font shape `TS1/cmtt/m/n' tried instead on input line 221.
 
-Overfull \hbox (42.768pt too wide) in paragraph at lines 241--241
-[]\T1/aett/bx/n/10 2 types différents : 143 ou 78.9 pour l\TS1/cmtt/m/n/10 '\T1
-/aett/bx/n/10 inertie des classes (tot.withinss)[] 
+<ex2_iris_1.png, id=13, 526.96875pt x 429.605pt>
+File: ex2_iris_1.png Graphic file (type png)
+ <use ex2_iris_1.png>
+Package pdftex.def Info: ex2_iris_1.png used on input line 234.
+(pdftex.def)             Requested size: 345.0pt x 281.27205pt.
+
+<ex2_iris_2.png, id=15, 526.96875pt x 429.605pt>
+File: ex2_iris_2.png Graphic file (type png)
+ <use ex2_iris_2.png>
+Package pdftex.def Info: ex2_iris_2.png used on input line 245.
+(pdftex.def)             Requested size: 345.0pt x 281.27205pt.
+
+<ex2_iris_3.png, id=16, 526.96875pt x 429.605pt>
+File: ex2_iris_3.png Graphic file (type png)
+ <use ex2_iris_3.png>
+Package pdftex.def Info: ex2_iris_3.png used on input line 262.
+(pdftex.def)             Requested size: 241.49895pt x 196.87994pt.
+ [3]
+[4 <./ex2_iris_1.png>] [5 <./ex2_iris_2.png>]
+<ex2_iris_4.png, id=31, 526.96875pt x 429.605pt>
+File: ex2_iris_4.png Graphic file (type png)
+ <use ex2_iris_4.png>
+Package pdftex.def Info: ex2_iris_4.png used on input line 272.
+(pdftex.def)             Requested size: 241.49895pt x 196.87994pt.
+
+Overfull \hbox (27.0393pt too wide) in paragraph at lines 287--287
+[]\T1/aett/bx/n/10 crabsquant <- crabsquant/matrix(rep(crabsquant[,4],dim(crabs
+quant)[2]),[] 
  []
 
 
-Overfull \hbox (1038.37488pt too wide) in paragraph at lines 241--241
-[]\T1/aett/bx/n/10 La solution qui apparait en 3 classes n\TS1/cmtt/m/n/10 '\T1
-/aett/bx/n/10 est pas flagrante avec le tableau des minimums des inerties. La m
-éthode du coude ne fonctionne pas très bien, elle ne fait pas apparaitre de cou
-de. Le minimum d\TS1/cmtt/m/n/10 '\T1/aett/bx/n/10 inertie de  fait que diminue
-r en fonction du nombre de classes.[] 
+Overfull \hbox (84.6792pt too wide) in paragraph at lines 287--287
+[]\T1/aett/bx/n/10 plot(crabsquant, col =kmeans(crabsquant, 4)$cluster) %% Pour
+ pareil à celui du TP1[] 
  []
 
-
-Overfull \hbox (231.40765pt too wide) in paragraph at lines 241--241
-[]\T1/aett/bx/n/10 Une solution serait de pénaliser un grand nombre de classes 
-par le nombre d\TS1/cmtt/m/n/10 '\T1/aett/bx/n/10 individus présents dans la cl
-asse.[] 
- []
-
-[3]
-Overfull \hbox (95.15918pt too wide) in paragraph at lines 258--258
+<ex2.png, id=32, 578.16pt x 505.13719pt>
+File: ex2.png Graphic file (type png)
+ <use ex2.png>
+Package pdftex.def Info: ex2.png used on input line 288.
+(pdftex.def)             Requested size: 345.0pt x 301.41977pt.
+ [6 <./ex2_iris_3.png>]
+[7 <./ex2_iris_4.png> <./ex2.png>]
+Overfull \hbox (95.15918pt too wide) in paragraph at lines 304--304
 []\T1/aett/bx/n/10 tableau de contingence pour comparer les partitions table(re
 s$cluster, res2$cluster)[] 
  []
 
-[4] (C:\Users\JB\Desktop\sy09\tp2\Rapport.aux)
+[8] (./Rapport.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 3273 strings out of 493921
- 42927 string characters out of 3144885
- 97252 words of memory out of 3000000
- 6503 multiletter control sequences out of 15000+200000
- 16219 words of font info for 35 fonts, out of 3000000 for 9000
- 841 hyphenation exceptions out of 8191
- 35i,5n,24p,285b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\JB\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tct
-t1000.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
-12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pf
-b>
-Output written on Rapport.pdf (4 pages, 57372 bytes).
+ 4016 strings out of 494522
+ 54939 string characters out of 6167206
+ 114706 words of memory out of 5000000
+ 7173 multiletter control sequences out of 15000+600000
+ 20966 words of font info for 42 fonts, out of 8000000 for 9000
+ 319 hyphenation exceptions out of 8191
+ 38i,7n,30p,462b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </Users/marionDepuydt/Library/texlive/2014basic/texmf-var/fonts/pk/ljfour/jk
+nappen/ec/tctt1000.600pk></usr/local/texlive/2014basic/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014basic/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014basic/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2014basic/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2014basic/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014basic/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Rapport.pdf (8 pages, 304703 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
+ 70 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
->>>>>>> a03dc5d6e1e9ed556e90299424c3c7fad9660aca

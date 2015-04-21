@@ -1,5 +1,5 @@
 % !Rnw weave = knitr
-
+%% TO add package copy into /usr/local/texlive/2010basic/texmf-dist/tex/latex/base/ .sty
 \documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
 %% maxwidth is the original width if it is less than linewidth
 %% otherwise use linewidth (to make sure the graphics do not exceed the margin)
@@ -227,40 +227,53 @@ on refait de même avec cmdscale(mutation, 3, T) jusqu'à 5
 library(cluster)
 clusplot 
 \subsection*{Iris}
+
+\subsubsection*{Question 1 - Différents nombres de partiton}
+
 \begin{figure}
-<<iris, fig=TRUE>>=
-par(mfrow=c(1,3))
-clusplot(iris, res2$cluster)
-res3 = kmeans(iris, 3)
-clusplot(iris, res3$cluster)
-res4 = kmeans(iris, 4)
-clusplot(iris, res4$cluster)
-@$
+\includegraphics[width=\textwidth]{ex2_iris_1.png}
 \caption{Visualisation de kmeans avec 2, 3 et 4 partitions}
 \end{figure}
-\subsubsection*{Question 1 - Différents nombres de partiton}
+
 Premièrement, nous remarquons que les partitions n'ont pas toutes le même nombre d'éléments. 
-Ensuite, elle varie suivant le nombre de partitions. En effet, nous pourrions penser qu'entre eux 3 et 4 partitions, l'ajout d'une partition subdiviserait une partition déjà existante. Comme le montre les graphes ci dessous cela n'est pas le cas. En effet les 3 partitions de droit pour K=4 ne sont pas pas contenus dans entièrement 2 partitions de K=3. Toutes les partitions sont redéfinis à chaque fois que nous augmontons le nombre.   
+Ensuite, elle varie suivant le nombre de partitions. En effet, nous pourrions penser qu'entre eux 3 et 4 partitions, l'ajout d'une partition subdiviserait une partition déjà existante. Comme le montre les graphes ci dessous cela n'est pas le cas. En effet les 3 partitions de droit pour K=4 ne sont pas pas contenus dans entièrement 2 partitions de K=3. Toutes les partitions sont redéfinis à chaque fois que nous augmontons le nombre. 
+Nous savons qu'il existe 3 espèces distinctes d'Iris représentées la représentation avec K=3 représente assez fidélement les 3 espèces. 
 \subsubsection*{Question 2 - Stabilité des partitions}
-De plus, même pour un même K, dans notre cas k=3, les partitions peuvent changer. Ici, nous avons deux cas différents avec des inerties de classes de 143 ou 78.9. Cela est du au choix aléatoire des centres au début de l'algorithme.
-%%TODO add graphe si place 
+
+De plus, même pour un même K, dans notre cas k=3, les partitions peuvent changer. Ici, nous avons deux cas différents avec des inerties de classes de 143 ou 78.9. Cela est du au choix aléatoire des centres au début de l'algorithme, nous tombons parfois sur un minima local. Cela une partition correspond à la classification selon les espéces il s'agit de celle avec le miminum d'inertie intra-classes
+\begin{figure}
+\includegraphics[width=\textwidth]{ex2_iris_2.png}
+\caption{Visualisation des 2 différentes partitions avec respectivement 78.85 et 142.75 de d'inertie intra-classes}
+\end{figure}
+ 
 \subsubsection*{Question 3 - Nombre de partitions optimales}
 
 \begin{verbatim}
-$for(j in 2:10){
+$test <- matrix(0, 9, 100)$
+$for(j in 1:9){
   for(i in 1:100){
-    test[j, i] = kmeans(iris, j)$tot.withinss
+    test[j, i] = kmeans(iris, j+1)$tot.withinss
   }
 }$
-apply(test, 2, min)
+apply(test, 1, min)
 \end{verbatim}
-%%TODO add graphe 
+
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{ex2_iris_3.png}
+\caption{Minimum centre d'inertie suivant le nombre de partition}
+\end{figure}
+
 La solution optimale semble être en 3 classes. Pourtant celle-ci n'est pas flagrante avec le tableau des minimums des inerties. La méthode du coude ne fonctionne pas très bien, elle ne fait pas apparaitre de coude. Le minimum d'inertie de  fait que diminuer en fonction du nombre de classes. 
 Une solution serait de pénaliser un grand nombre de classes par le nombre d'individus présents dans la classe.
 
 \subsubsection*{Question 4 - Partitions réelles}
 
-%%TODO quelle fonction utilisée? 
+\begin{figure}
+\includegraphics[width=\textwidth]{ex2_iris_4.png}
+\caption{Comparaison entre classement réelles des espèces à droite et avec la méthode des centre mobiles}
+\end{figure}
+
+La première espèce (setosa) est bien différenciée suivant la méthode des centre mobiles alors que les espèces versicolor et verginia se chevauchent il est alors plus difficile pour l'algorithme de les différencer efficacement. 
 
 \subsection*{Crabs}
 \begin{verbatim}
@@ -273,6 +286,8 @@ clusplot(crabsquant, kmeans(crabsquant, 4)$cluster)
 plot(crabsquant, col =kmeans(crabsquant, 4)$cluster) %% Pour pareil à celui du TP1
 \end{verbatim}
 \includegraphics[width=\textwidth]{ex2.png}
+
+
 
 Nous retrouvons les mêmes classes avec la partitions des centre mobiles ou suivant la classification suivant l'espèce et le sexe. Cela montre bien que les autres variables permettent de déterminer l'espèce et le sexe d'un crabe. 
 

@@ -118,8 +118,27 @@ AFTD = function(D){
 }
 @
 
-
+<<echo=FALSE, fig.height=5>>=
+source('~/Documents/repo/TP2/aftd.R')
+load("ex2.data.RData")
+D = as.matrix(mutations2)
+    D = D^2
+    Q = diag(nrow(D))-matrix(1, nrow(D), nrow(D))/nrow(D)
+    W = (-1/2)*Q%*%D%*%Q
+    V = eigen(W/nrow(W))$vectors
+    V = V*sqrt(nrow(D))
+    L = eigen(W/nrow(W))$values
+    L[L<0] = 0
+    L = diag(L)
+    
+    C = V%*%sqrt(L)
+ par(mfrow=c(1,2))
+ 
+plot(C)
+plot(cmdscale(mutations2))
+@
   
+Nous remarquons que les résultats ne sont pas identiques en effet la fonction cmdscale n'utilise pas la même variance. L'une utilise la variance empirique et l'autre la variance empirique corrigée. 
 
 \section*{Exercice 2} 
 

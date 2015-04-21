@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.16)  21 APR 2015 12:49
 entering extended mode
 **Rapport.tex
@@ -829,6 +830,8 @@ PDF statistics:
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
 =======
+=======
+>>>>>>> origin/master
 This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.1)  21 APR 2015 11:15
 entering extended mode
  restricted \write18 enabled.
@@ -1722,4 +1725,7 @@ PDF statistics:
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master

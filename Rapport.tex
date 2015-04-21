@@ -295,6 +295,7 @@ library(cluster)
 clusplot 
 \subsection*{Iris}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 \begin{verbatim}
 iris = iris[ ,1:4]
@@ -308,6 +309,8 @@ res2 = kmeans(iris, 3)
 
 $for(j in 2:10){
 =======
+=======
+>>>>>>> origin/master
 
 \subsubsection*{Question 1 - Différents nombres de partiton}
 
@@ -332,11 +335,15 @@ De plus, même pour un même K, dans notre cas k=3, les partitions peuvent chang
 \begin{verbatim}
 $test <- matrix(0, 9, 100)$
 $for(j in 1:9){
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
   for(i in 1:100){
     test[j, i] = kmeans(iris, j+1)$tot.withinss
   }
 }$
+<<<<<<< HEAD
 <<<<<<< HEAD
 apply(test, 2, min)
 La solution qui apparait en 3 classes n'est pas flagrante avec le tableau des minimums des inerties. La méthode du coude ne fonctionne pas très bien, elle ne fait pas apparaitre de coude. Le minimum d'inertie de  fait que diminuer en fonction du nombre de classes. 
@@ -348,6 +355,8 @@ Une solution serait de pénaliser un grand nombre de classes par le nombre d'ind
 library(MASS)
 
 =======
+=======
+>>>>>>> origin/master
 apply(test, 1, min)
 \end{verbatim}
 
@@ -385,6 +394,9 @@ J'ai donc effectué les 2 classifications avec 3 et 4 partitions.
 \includegraphics[width=\textwidth]{ex2_crab_4.png}
 
 Nous retrouvons à peu près les mêmes classes avec la partitions des centre mobiles ou suivant la classification suivant l'espèce et le sexe. Cela montre bien que les autres variables permettent de déterminer l'espèce et le sexe d'un crabe. 
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 
 \subsection*{Mutations}

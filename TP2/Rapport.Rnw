@@ -10,6 +10,9 @@
 
 \begin{document}
 
+\title{TP2: AFTD et Classification automatique}
+\author{Jean Baptiste Vivier - Marion Depuydt}
+\maketitle
 \section*{Exercice 1}
 
 

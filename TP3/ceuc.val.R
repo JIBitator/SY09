@@ -7,6 +7,15 @@ ceuc.val <- function(mu, Xtst){
     }
   }
   # choisir la colonne de la classe
-  #apply(dist, 1, min)
+  min <- apply(dist, 1, min)
+  ntst <- vector('numeric', nrow(dist))
+  for(i in 1:nrow(dist)){
+    for(j in 1:ncol(dist)){
+      if(min[i]==dist[i,j]){
+        ntst[i] = j
+      }
+    }
+  }
+  ntst
   #apply(Xtxt, 1, apply, 1, mu, sqrt(sum()))
 }

@@ -63,6 +63,7 @@
 \maketitle
 \section*{Exercice 1}
 
+\subsection*{Partie théorique}
 
 
 
@@ -228,7 +229,7 @@ Voici une fonction qui fait l'AFTD d'un tableau de distance, et fait un plot du 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{AFTD} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{D}\hlstd{)\{}
+\hlstd{AFTD} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{D}\hlstd{,}\hlkwc{k}\hlstd{=}\hlnum{2}\hlstd{)\{}
     \hlstd{D} \hlkwb{=} \hlkwd{as.matrix}\hlstd{(D)}
     \hlstd{D} \hlkwb{=} \hlstd{D}\hlopt{^}\hlnum{2}
     \hlstd{Q} \hlkwb{=} \hlkwd{diag}\hlstd{(}\hlkwd{nrow}\hlstd{(D))}\hlopt{-}\hlkwd{matrix}\hlstd{(}\hlnum{1}\hlstd{,} \hlkwd{nrow}\hlstd{(D),} \hlkwd{nrow}\hlstd{(D))}\hlopt{/}\hlkwd{nrow}\hlstd{(D)}
@@ -240,21 +241,41 @@ Voici une fonction qui fait l'AFTD d'un tableau de distance, et fait un plot du 
     \hlstd{L} \hlkwb{=} \hlkwd{diag}\hlstd{(L)}
 
     \hlstd{C} \hlkwb{=} \hlstd{V}\hlopt{%*%}\hlkwd{sqrt}\hlstd{(L)}
-    \hlkwd{plot}\hlstd{(C)}
+    \hlkwd{plot}\hlstd{(C[,}\hlnum{1}\hlopt{:}\hlstd{k])}
+    \hlkwd{return}\hlstd{(C[,}\hlnum{1}\hlopt{:}\hlstd{k])}
 \hlstd{\}}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-16-1} 
 
+\subsection{Données de mutations}
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in readChar(con, 5L, useBytes = TRUE): impossible d'ouvrir le fichier compressé 'exo2.RData', cause probable : 'No such file or directory'}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in readChar(con, 5L, useBytes = TRUE): impossible d'ouvrir la connexion}}\end{kframe}
 \end{knitrout}
-  
-Nous remarquons que les résultats ne sont pas identiques en effet la fonction cmdscale n'utilise pas la même variance. L'une utilise la variance empirique et l'autre la variance empirique corrigée. 
+
+On obtient des résulats similaires (en isométries près) en utilisant la fonction AFTD de l'exercice précédent, et la fonction cmdscale. 
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): impossible de trouver la fonction "{}AFTD"{}}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in cmdscale(mutations): objet 'mutations' introuvable}}\end{kframe}
+\end{knitrout}
+
 
 \section*{Exercice 2} 
+
+
 
 \subsection*{Iris}
 

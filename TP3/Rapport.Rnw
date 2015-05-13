@@ -18,6 +18,22 @@ Voir code en annexe
 \subsection*{Evaluation des performances}
 
 \subsubsection*{Centre de gravité $ \mu_k $ et matrice de covariance $ \sum_k $ }
+\section*{Règle de Bayes}
+
+\subsection*{Distributions marginales}
+
+Xw1~ N($ \mu_1 $, $ \sum_1 $) et Xw2~ N($ \mu_2 $, $ \sum_2 $)
+ce qui donne respectivement 
+$ f_1(x)= 1/(2pi)n1/2*e(-1/2*((x+2)^2+(y-1)^2)) $
+//TODO f_2
+\sum est diagonale donc X_1, ... X_k sont indépendantes. 
+et nous savons que les f_11 et f_12 sont des lois normales car ce sont des sous vecteurs d'un vectur gaussien. 
+f_1 = f_11 * f_12 
+Nous posons X1 ~ w1 N(a_1, b_1) et X2 ~ w2(a_2, b_2)
+
+... 
+X1 ~ w1 N(-2, 1) et X2 ~ w2(1, 1)
+
 
 \section*{Annexe}
 

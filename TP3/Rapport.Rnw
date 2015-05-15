@@ -11,9 +11,12 @@
 \maketitle
 \section*{Classifieur euclidien, K plus proches voisins}
 
+
+
 \subsection*{Programmation}
 
 Voir code en annexe
+
 
 \subsection*{Evaluation des performances}
 
@@ -22,6 +25,7 @@ Voir code en annexe
 
 \subsection*{Distributions marginales}
 
+\begin{verbatim}
 Xw1~ N($ \mu_1 $, $ \sum_1 $) et Xw2~ N($ \mu_2 $, $ \sum_2 $)
 ce qui donne respectivement 
 $ f_1(x)= 1/(2pi)n1/2*e(-1/2*((x+2)^2+(y-1)^2)) $
@@ -29,10 +33,15 @@ $ f_1(x)= 1/(2pi)n1/2*e(-1/2*((x+2)^2+(y-1)^2)) $
 \sum est diagonale donc X_1, ... X_k sont indépendantes. 
 et nous savons que les f_11 et f_12 sont des lois normales car ce sont des sous vecteurs d'un vectur gaussien. 
 f_1 = f_11 * f_12 
-Nous posons X1 ~ w1 N(a_1, b_1) et X2 ~ w2(a_2, b_2)
+Nous posons X1 ~ w1 N(a_1, b_1) et X2 ~ w2(a_2, b_2)
 
 ... 
 X1 ~ w1 N(-2, 1) et X2 ~ w2(1, 1)
+
+\end{verbatim}
+
+
+
 
 
 \section*{Annexe}
@@ -102,5 +111,6 @@ kppv.val <- function(Xapp, zapp, K, Xtst)
   round(apply(tmp2, 2, mean))
 }
 @
+
 
 \end{document}

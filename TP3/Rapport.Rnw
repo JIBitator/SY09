@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[cyr]{aeguill}
 \usepackage[francais]{babel}
+\usepackage{amsmath}
 
 \begin{document}
 
@@ -24,19 +25,20 @@ Voir code en annexe
 \section*{Règle de Bayes}
 
 \subsection*{Distributions marginales}
+X\raisebox{-0.7ex}{$\widetilde{w_1}$}$\mathcal{N}(\mu_1, \sum_1)$ et X\raisebox{-0.7ex}{$\widetilde{w_2}$}$\mathcal{N}(\mu_2, \sum_2)$
+ce qui donne respectivement \newline
+$f_1(x)= \frac{1}{(2\pi)^{p/2}}e^{-1/2*((x+2)^2+(y-1)^2)}$ et
+$f_2(x)= \frac{1}{(2\pi)^{p/2}}e^{-1/2*((x-1)^2+(y-1)^2)}$ \newline
+$\sum_1$ et $\sum_2$ sont diagonales ce qui implique que $X_1$, ..., $X_k$ sont indépendantes Nous pouvons par conséquent écrire que $f_1=f_{11}*f_{12}$ et $f_2=f_{21}*f_{22}$. \newline 
+De plus, nous savons que les $f_{11}$ et $f_{12}$ sont des lois normales car ce sont des sous vecteurs d'un vecteur gaussien. \newline
+Nous pouvons donc poser
+$X^1$\raisebox{-0.7ex}{$\widetilde{w_1}$}$\mathcal{N}(a_1, b_1)$, $X^2$\raisebox{-0.7ex}{$\widetilde{w_2}$}$\mathcal{N}(a_2, b_2)$ et $X^2$\raisebox{-0.7ex}{$\widetilde{w_1}$}$\mathcal{N}(c_1, d_1)$, $X^2$\raisebox{-0.7ex}{$\widetilde{w_2}$}$\mathcal{N}(c_2, d_2)$. \newline
+En résolvant le système nous obtenons: $X^1$\raisebox{-0.7ex}{$\widetilde{w_1}$}$\mathcal{N}(-2, 1)$ , $X^1$\raisebox{-0.7ex}{$\widetilde{w_2}$}$\mathcal{N}(1, 1)$ ainsi que $X^2$\raisebox{-0.7ex}{$\widetilde{w_1}$}$\mathcal{N}(1, 1)$ et $X^2$\raisebox{-0.7ex}{$\widetilde{w_2}$}$\mathcal{N}(1, 1)$
 
+\subsection*{Courbes d'iso-densité}
 \begin{verbatim}
-Xw1~ N($ \mu_1 $, $ \sum_1 $) et Xw2~ N($ \mu_2 $, $ \sum_2 $)
-ce qui donne respectivement 
-$ f_1(x)= 1/(2pi)n1/2*e(-1/2*((x+2)^2+(y-1)^2)) $
-//TODO f_2
-\sum est diagonale donc X_1, ... X_k sont indépendantes. 
-et nous savons que les f_11 et f_12 sont des lois normales car ce sont des sous vecteurs d'un vectur gaussien. 
-f_1 = f_11 * f_12 
-Nous posons X1 ~ w1 N(a_1, b_1) et X2 ~ w2(a_2, b_2)
 
-... 
-X1 ~ w1 N(-2, 1) et X2 ~ w2(1, 1)
+
 
 \end{verbatim}
 

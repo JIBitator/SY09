@@ -51,7 +51,13 @@ $\delta^{*}(x) =
 \end{cases}$\\ \\
 
 Après simplification nous obtenons, $\delta^{*}(x) = \begin{cases} 
-  a_{1} & si  \> x < \frac{ln(n)-ln(n-n1)}{3} - \frac{1}{2} \\
+  a_{1} & si  \> x < \frac{ln(\pi_1)-ln(\pi_2)}{3} - \frac{1}{2} \\
+  a_{2} & sinon.
+\end{cases}$\\ \\
+
+Or d'après l'énonce $\pi_1 = 0.5$ donc $\pi_2= 0.5$ aussi pour que la somme des proportions des classes soient égales à 1 ce qui simplifie l'équation:\\ 
+$\delta^{*}(x) = \begin{cases} 
+  a_{1} & si  \> x < - \frac{1}{2} \\
   a_{2} & sinon.
 \end{cases}$\\ \\
 

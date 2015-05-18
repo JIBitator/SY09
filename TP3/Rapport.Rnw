@@ -63,6 +63,23 @@ $\delta^{*}(x) = \begin{cases}
   a_{2} & sinon.
 \end{cases}$\\ \\
 
+\subsection*{Frontières de décision}
+<<echo=FALSE>>=
+load("data.RData")
+@
+
+<<echo=F>>=
+par(mfrow=c(2,2))
+plot(synth1[,1] ~ synth1[,2], col=synth1[,3], xlab="X1",ylab="X2")
+abline(a = -1/2, b=0, col = "blue")
+plot(synth100[,1] ~ synth100[,2], col=synth100[,3], xlab="X1",ylab="X2")
+abline(a = -1/2, b=0, col = "blue")
+plot(synth500[,1] ~ synth500[,2], col=synth500[,3], xlab="X1",ylab="X2")
+abline(a = -1/2, b=0, col = "blue")
+plot(synth1000[,1] ~ synth1000[,2], col=synth1000[,3], xlab="X1",ylab="X2")
+abline(a = -1/2, b=0, col = "blue")
+@
+
 
 \begin{verbatim}
 

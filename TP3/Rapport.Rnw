@@ -79,6 +79,24 @@ abline(a = -1/2, b=0, col = "blue")
 plot(synth1000[,1] ~ synth1000[,2], col=synth1000[,3], xlab="X1",ylab="X2")
 abline(a = -1/2, b=0, col = "blue")
 @
+\subsection*{Erreur de Bayes}
+
+$\alpha$ = $\mathcal{P}$($\delta^{*}$(\textit{x}) = $a_{2}\mid\omega_{1}$) et
+$\beta$ = $\mathcal{P}$($\delta^{*}$(\textit{x}) = $a_{1}\mid\omega_{2}$). Pour les calculer, vous trouverez les deux fonctions que nous avons utilisés en annexes (Estimateur $\alpha$ et $\beta$). \\
+
+\begin{tabular}{|c|c|c|}
+\hline
+Synth1 & $\alpha$ & $\beta$ \\
+\hline
+40 & 0.09090909 & 0.09090909 \\
+\hline
+100 & 0.1320755 & 0.05660377 \\
+\hline
+500 & 0.08333333 & 0.07083333 \\
+\hline
+1000 & 0.07786885 & 0.05737705 \\
+\hline
+\end{tabular}\\ \\
 
 
 \begin{verbatim}
@@ -177,6 +195,25 @@ kppv.val <- function(Xapp, zapp, K, Xtst)
   round(apply(tmp2, 2, mean))
 }
 @
+\subsection*{Estimateur $\alpha$ et $\beta$}
+<<eval=FALSE>>=
+estimateurAlpha <- function(data){
+  sum(apply(data, 1,
+  function(row) {
+    if(row[3] == 1 && row[1] > -0.5) 
+      { return(1) } 
+    return(0) }
+  )) / sum(data[,3] == 1)
+}
 
+estimateurBeta <- function(data){
+  sum(apply(data, 1,
+            function(row) {
+              if(row[3] == 2 && row[1] < -0.5) 
+              { return(1) } 
+              return(0) }
+  )) / sum(data[,3] == 1)
+}
+@
 
 \end{document}

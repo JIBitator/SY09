@@ -40,20 +40,16 @@ En résolvant le système nous obtenons: $X^1$\raisebox{-0.7ex}{$\widetilde{w_1}
 L'équation de la courbe d'iso-densité de la classe 1 est $(x - \mu_1)^t\sum_1^{-1}(x-\mu_1)=c$ où c est une constante. Après avoir effectué les calculs nous obtenons, $(x-2)^2+(y-1)^2=c$ or l'équation d'un cercle de centre (a,b) et de rayon s'écrit $(x-a)^2+(y-b)^2=r^2$. 
 Nous en déduisons donc que la courbe d'iso-densité de la classe 1 est un cercle de centre (-2,1) et de rayon $\sqrt{c}$.
 
-Nous procédons de même pour déterminer que la courbe d'iso-densité de la classe 2 est un cercle de centre (1, 1) et de rayon $\sqrt{c}$.Nous remarquons que le centre des cercles correspond à \mu. 
+Nous procédons de même pour déterminer que la courbe d'iso-densité de la classe 2 est un cercle de centre (1, 1) et de rayon $\sqrt{c}$.Nous remarquons que le centre des cercles correspond à $\mu$. 
+
+\subsection*{Règle de Bayes}
 
 \begin{verbatim}
 
 
 
 \end{verbatim}
-
-
-
-
-
 \section*{Annexe}
-
 \subsection*{Classifieur euclidien: fonction d'apprentissage}
 <<eval=FALSE>>=
 ceuc.app <- function(Xapp, zapp){

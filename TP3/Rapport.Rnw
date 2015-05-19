@@ -82,13 +82,13 @@ De même, $\sum_1 = \sum_2 \to \begin{pmatrix}
 
 \subsection*{Intervalle de confiance}
 
-Soit $E=\frac{1}{m}\sum 1_{z_i\ne z_i}$, $T_i=1_{z_i\ne z_i}$ suit une loi de Bernouilli de paramètre $\varepsilon$ car %$\mathbb{P}(T_1=1)=\mathbb{E}(E)=\mathbb{E}(\frac{1}{m}\overset{m}{\underset{i}{\sum}}T_i)=\frac{1}{m}\mathbb{E}(\overset{m}{\underset{i}{\sum}}{T_i})=m\overset{m}{\underset{i}{\sum}} \mathbb{E}(T_1)=\frac{m \varepsilon}{m}=\varepsilon$.
+Soit $E=\frac{1}{m}\sum 1_{z_i\ne z_i}$, $T_i=1_{z_i\ne z_i}$ suit une loi de Bernouilli de paramètre $\varepsilon$.
 
-Nous répétons N fois une loi de Bernouilli, nous obtenons donc une loi binomiale $E_j {}\widetilde{}\mathcal{B}(N, \varepsilon)$ donc %$\mathbb{E}(E_j)=N\varepsilon$
-et  $Var(E_j)=N\varepsilon(1-\varepsilon)$.
+$mE$ suit donc une loi binomiale. Elle peut être approchée par une loi normale car on suppose que $m$ est grand. $mE\sim \mathcal{N}(m\varepsilon,m\varepsilon(1-\varepsilon))$.
 
-Notons $\bar{E}=\overset{N}{\underset{j}{\sum}}\frac{E_j}{N}$, 
+Donc $E\sim \mathcal{N}(\varepsilon,m^{-1}\varepsilon(1-\varepsilon))$
 
+Un intervalle de confiance pour l'espérance de E, comme les taux d'erreur $E_j$ sont indépendants, est : $IC = [\bar{E} - t_{m-1;1-\alpha/2}\frac{S^*}{\sqrt{m}}, \bar{E} + t_{m-1;1-\alpha/2}\frac{S^*}{\sqrt{m}}]$
 
 \subsection*{Sript}
 %%TODO

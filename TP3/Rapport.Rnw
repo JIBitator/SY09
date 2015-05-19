@@ -1,4 +1,4 @@
-\documentclass{article}
+﻿\documentclass{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[cyr]{aeguill}
@@ -82,6 +82,7 @@ De même, $\sum_1 = \sum_2 \to \begin{pmatrix}
 
 \subsection*{Intervalle de confiance}
 
+
 Soit $E=\frac{1}{m}\sum 1_{z_i\ne z_i}$, $T_i=1_{z_i\ne z_i}$ suit une loi de Bernouilli de paramètre $\varepsilon$ car $P(T_i=1)=E(E)=E(\frac{1}{m}\overset{m}{\underset{i}{\sum}}T_i)=\frac{1}{m}E(\overset{m}{\underset{i}{\sum}}{T_i})=m\overset{m}{\underset{i}{\sum}} E(T_1)=\frac{m \varepsilon}{m}=\varepsilon$.
 
 Nous répétons N fois une loi de Bernouilli, nous obtenons donc une loi binomiale $E_j \sim  \mathcal{B}(N, \varepsilon)$ donc $E(E_j)=N\varepsilon$
@@ -91,17 +92,16 @@ Notons $\bar{E}=\overset{N}{\underset{j}{\sum}}\frac{E_j}{N}$,
 $E(\bar{E})=E(\overset{N}{\underset{j}{\sum}}\frac{E_j}{N})=\frac{1}{N}E(\overset{N}{\underset{j}{\sum}}E_j)=\frac{1}{N}\overset{N}{\underset{j}{\sum}}E(E_j)=\frac{N\varepsilon}{N}= \varepsilon$ car $E_j$ sont indépendantes entre elles.
 
 $Var(\bar{E})=Var(\overset{N}{\underset{j}{\sum}}\frac{E_j}{N})=\frac{1}{N^2}Var(\overset{N}{\underset{j}{\sum}}E_j)=\frac{1}{N^2}\overset{N}{\underset{j}{\sum}}Var(E_j)=\frac{N\varepsilon(1-\varepsilon)}{N^2}=\frac{\varepsilon(1-\varepsilon)}{N}$.
+=======
+Soit $E=\frac{1}{m}\sum 1_{z_i\ne z_i}$, $T_i=1_{z_i\ne z_i}$ suit une loi de Bernouilli de paramètre $\varepsilon$.
 
-Nous observons bien que plus N est grand, plus la variance diminue.
-Nous pouvons donc appliquer le TLC car les conditions sont vérifiées n>30. \\ 
-$E_j \sim \mathcal{N}(E(E_j), Var(E_j))$, $E_j \sim \mathcal{N}(N\varepsilon, N\varepsilon(1-\varepsilon))$. \\ De même, $\bar{E} \sim \mathcal{N}(\varepsilon, \frac{\varepsilon(1-\varepsilon)}{N})$ puis $(\bar{E}-\varepsilon) \sim \mathcal(0, \frac{\varepsilon(1-\varepsilon)}{N})$ et pour finir \\
-$(\bar{E}-\varepsilon)\sqrt{\frac{N}{\varepsilon(1-\varepsilon)}} \sim \mathcal{N}(0,1)$ \\
-$P(u_{\alpha/2}<(\bar{E}-\varepsilon)\sqrt{\frac{N}{\varepsilon(1-\varepsilon)}} < u_{1-\alpha/2})=1 - \alpha$
-$P(u_{\alpha/2}\sqrt{\frac{\varepsilon(1-\varepsilon)}{N}}< \bar{E}-\varepsilon < u_{1-\alpha/2}\sqrt{\frac{\varepsilon(1-\varepsilon)}{N}})=1 - \alpha$
-$P(u_{\alpha/2}\sqrt{\frac{\varepsilon(1-\varepsilon)}{N}}+\varepsilon< \bar{E} < u_{1-\alpha/2}\sqrt{\frac{\varepsilon(1-\varepsilon)}{N}}+\varepsilon)=1 - \alpha$
+$mE$ suit donc une loi binomiale. Elle peut être approchée par une loi normale car on suppose que $m$ est grand. $mE\sim \mathcal{N}(m\varepsilon,m\varepsilon(1-\varepsilon))$.
 
-Pour conclure l'intervalle de confiance est donc de la forme \\
-$IC = [u_{\alpha/2}\sqrt{\frac{\varepsilon(1-\varepsilon)}{N}}+\varepsilon, u_{1-\alpha/2}\sqrt{\frac{\varepsilon(1-\varepsilon)}{N}}+\varepsilon]$
+Donc $E\sim \mathcal{N}(\varepsilon,m^{-1}\varepsilon(1-\varepsilon))$
+
+Un intervalle de confiance pour l'espérance de E, comme les taux d'erreur $E_j$ sont indépendants, est : $IC = [\bar{E} - t_{m-1;1-\alpha/2}\frac{S^*}{\sqrt{m}}, \bar{E} + t_{m-1;1-\alpha/2}\frac{S^*}{\sqrt{m}}]$
+
+
 \subsection*{Sript}
 %%TODO
 

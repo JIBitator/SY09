@@ -91,7 +91,12 @@ $mE$ suit donc une loi binomiale. Elle peut être approchée par une loi normale
 
 Donc $E\sim \mathcal{N}(\varepsilon,m^{-1}\varepsilon(1-\varepsilon))$
 
-Un intervalle de confiance pour l'espérance de E, comme les taux d'erreur $E_j$ sont indépendants, est : $IC = [\bar{E} - t_{N-1;1-\alpha/2}\frac{S^*}{\sqrt{N}}, \bar{E} + t_{N-1;1-\alpha/2}\frac{S^*}{\sqrt{N}}]$
+On ne connait pas la variance. On sait que l'on a pour une loi gaussienne E : $\frac{\bar{E}-\mu}{S^*/\sqrt{N}} \sim \tau_{N-1}$ On peut en déduire un intervalle de confiance pour l'espérance de E, comme les taux d'erreur $E_j$ sont indépendants. 
+
+On va chercher $\mu$ tel que : $P(\frac{\bar{E}-\mu}{S^*/\sqrt{N}}) < 1-\alpha$
+
+On obtient après calculs :
+$IC = [\bar{E} - t_{N-1;1-\alpha/2}\frac{S^*}{\sqrt{N}}, \bar{E} + t_{N-1;1-\alpha/2}\frac{S^*}{\sqrt{N}}]$
 
 
 \subsection*{Sript}

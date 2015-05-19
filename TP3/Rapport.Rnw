@@ -83,6 +83,26 @@ De même, $\sum_1 = \sum_2 \to \begin{pmatrix}
   0 & 1  
 \end{pmatrix}$ et $\pi_1 = \pi_2 \to$ 0.5.
 
+
+\subsection*{Paramètres $\mu_k$ et $\sum_k$ de Synth2}
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{Synth2} & $\mu_k$ & $\sum_k$ & $\pi_k$  \\
+\hline
+1000 & $k=1$ & (-4.055942,1.011496) & $\begin{pmatrix}
+   1.01455973  & 0.01845083 \\
+   0.01845083 & 0.93975424 
+\end{pmatrix}$
+  & 0.488 \\
+\cline{2-3}
+ & $k=2$  & (4.028957, 1.067821) & $\begin{pmatrix}
+  4.9533975  & 0.1079094 \\
+  0.1079094 & 5.0221245 
+\end{pmatrix}$ & 0.512 \\
+\hline
+\end{tabular}
+
 \subsection*{Intervalle de confiance}
 
 
@@ -103,7 +123,7 @@ $IC = [\bar{E} - t_{N-1;1-\alpha/2}\frac{S^*}{\sqrt{N}}, \bar{E} + t_{N-1;1-\alp
 
 
 
-\subsection*{calcul d'erreurs}
+\subsection*{Calcul d'erreurs ceuc}
 
 Veuillez vous référer à la fonction \texttt{"calculate\_err\_apperrtst"} dans les annexes pour voir le script.
 
@@ -118,27 +138,12 @@ L'intervalle de confiance est, en prenant $\alpha = 0,95$ :
 $IR_tst = [1,142-2,093*\frac{0,0107}{\sqrt{20}}, 1,142+2,093*\frac{0,0107}{\sqrt{20}}] = [1,137,1,147]$
 
 $IR_app = [0.091-2,093*\frac{0,0022}{\sqrt{20}}, 0.091+2,093*\frac{0,0022}{\sqrt{20}}] = [0.090,0.092]$
-\subsection*{Sript}
-%%TODO
 
-\subsection*{Paramètres $\mu_k$ et $\sum_k$ de Synth2}
+\subsection*{Calcul d'erreurs kppv}
 
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\multicolumn{2}{|c|}{Synth2} & $\mu_k$ & $\sum_k$ & $\pi_k$  \\
-\hline
-1000 & $k=1$ & (-4.055942,1.011496) & $\begin{pmatrix}
-   1.01455973  & 0.01845083 \\
-   0.01845083 & 0.93975424 
-\end{pmatrix}$
-  & 0.488 \\
-\cline{2-3}
- & $k=2$  & (4.028957, 1.067821) & $\begin{pmatrix}
-  4.9533975  & 0.1079094 \\
-  0.1079094 & 5.0221245 
-\end{pmatrix}$ & 0.512 \\
-\hline
-\end{tabular}
+Si l'on sépare l'ensemble de données uniquement en en ensemble d'apprentissage et en un ensemble de test, les résultats sont biaisés. 
+
+
 
 \section*{Règle de Bayes}
 

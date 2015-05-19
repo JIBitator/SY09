@@ -85,21 +85,18 @@ De même, $\sum_1 = \sum_2 \to \begin{pmatrix}
 
 Soit $E=\frac{1}{m}\sum 1_{z_i\ne z_i}$, $T_i=1_{z_i\ne z_i}$ suit une loi de Bernouilli de paramètre $\varepsilon$ car $P(T_i=1)=E(E)=E(\frac{1}{m}\overset{m}{\underset{i}{\sum}}T_i)=\frac{1}{m}E(\overset{m}{\underset{i}{\sum}}{T_i})=m\overset{m}{\underset{i}{\sum}} E(T_1)=\frac{m \varepsilon}{m}=\varepsilon$.
 
-Nous répétons N fois une loi de Bernouilli, nous obtenons donc une loi binomiale $E_j \sim  \mathcal{B}(N, \varepsilon)$ donc $E(E_j)=N\varepsilon$
-et  $Var(E_j)=N\varepsilon(1-\varepsilon)$.
 
-Notons $\bar{E}=\overset{N}{\underset{j}{\sum}}\frac{E_j}{N}$, 
-$E(\bar{E})=E(\overset{N}{\underset{j}{\sum}}\frac{E_j}{N})=\frac{1}{N}E(\overset{N}{\underset{j}{\sum}}E_j)=\frac{1}{N}\overset{N}{\underset{j}{\sum}}E(E_j)=\frac{N\varepsilon}{N}= \varepsilon$ car $E_j$ sont indépendantes entre elles.
-
-$Var(\bar{E})=Var(\overset{N}{\underset{j}{\sum}}\frac{E_j}{N})=\frac{1}{N^2}Var(\overset{N}{\underset{j}{\sum}}E_j)=\frac{1}{N^2}\overset{N}{\underset{j}{\sum}}Var(E_j)=\frac{N\varepsilon(1-\varepsilon)}{N^2}=\frac{\varepsilon(1-\varepsilon)}{N}$.
-=======
-Soit $E=\frac{1}{m}\sum 1_{z_i\ne z_i}$, $T_i=1_{z_i\ne z_i}$ suit une loi de Bernouilli de paramètre $\varepsilon$.
 
 $mE$ suit donc une loi binomiale. Elle peut être approchée par une loi normale car on suppose que $m$ est grand. $mE\sim \mathcal{N}(m\varepsilon,m\varepsilon(1-\varepsilon))$.
 
 Donc $E\sim \mathcal{N}(\varepsilon,m^{-1}\varepsilon(1-\varepsilon))$
 
-Un intervalle de confiance pour l'espérance de E, comme les taux d'erreur $E_j$ sont indépendants, est : $IC = [\bar{E} - t_{m-1;1-\alpha/2}\frac{S^*}{\sqrt{m}}, \bar{E} + t_{m-1;1-\alpha/2}\frac{S^*}{\sqrt{m}}]$
+On ne connait pas la variance. On sait que l'on a pour une loi gaussienne E : $\frac{\bar{E}-\mu}{S^*/\sqrt{N}} \sim \tau_{N-1}$ On peut en déduire un intervalle de confiance pour l'espérance de E, comme les taux d'erreur $E_j$ sont indépendants. 
+
+On va chercher $\mu$ tel que : $P(\frac{\bar{E}-\mu}{S^*/\sqrt{N}}) < 1-\alpha$
+
+On obtient après calculs :
+$IC = [\bar{E} - t_{N-1;1-\alpha/2}\frac{S^*}{\sqrt{N}}, \bar{E} + t_{N-1;1-\alpha/2}\frac{S^*}{\sqrt{N}}]$
 
 
 \subsection*{Sript}

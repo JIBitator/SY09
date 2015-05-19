@@ -1,4 +1,4 @@
-﻿\documentclass{article}
+\documentclass{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[cyr]{aeguill}
@@ -85,15 +85,7 @@ De même, $\sum_1 = \sum_2 \to \begin{pmatrix}
 
 Soit $E=\frac{1}{m}\sum 1_{z_i\ne z_i}$, $T_i=1_{z_i\ne z_i}$ suit une loi de Bernouilli de paramètre $\varepsilon$ car $P(T_i=1)=E(E)=E(\frac{1}{m}\overset{m}{\underset{i}{\sum}}T_i)=\frac{1}{m}E(\overset{m}{\underset{i}{\sum}}{T_i})=m\overset{m}{\underset{i}{\sum}} E(T_1)=\frac{m \varepsilon}{m}=\varepsilon$.
 
-Nous répétons N fois une loi de Bernouilli, nous obtenons donc une loi binomiale $E_j \sim  \mathcal{B}(N, \varepsilon)$ donc $E(E_j)=N\varepsilon$
-et  $Var(E_j)=N\varepsilon(1-\varepsilon)$.
 
-Notons $\bar{E}=\overset{N}{\underset{j}{\sum}}\frac{E_j}{N}$, 
-$E(\bar{E})=E(\overset{N}{\underset{j}{\sum}}\frac{E_j}{N})=\frac{1}{N}E(\overset{N}{\underset{j}{\sum}}E_j)=\frac{1}{N}\overset{N}{\underset{j}{\sum}}E(E_j)=\frac{N\varepsilon}{N}= \varepsilon$ car $E_j$ sont indépendantes entre elles.
-
-$Var(\bar{E})=Var(\overset{N}{\underset{j}{\sum}}\frac{E_j}{N})=\frac{1}{N^2}Var(\overset{N}{\underset{j}{\sum}}E_j)=\frac{1}{N^2}\overset{N}{\underset{j}{\sum}}Var(E_j)=\frac{N\varepsilon(1-\varepsilon)}{N^2}=\frac{\varepsilon(1-\varepsilon)}{N}$.
-=======
-Soit $E=\frac{1}{m}\sum 1_{z_i\ne z_i}$, $T_i=1_{z_i\ne z_i}$ suit une loi de Bernouilli de paramètre $\varepsilon$.
 
 $mE$ suit donc une loi binomiale. Elle peut être approchée par une loi normale car on suppose que $m$ est grand. $mE\sim \mathcal{N}(m\varepsilon,m\varepsilon(1-\varepsilon))$.
 

@@ -1,4 +1,4 @@
-﻿\documentclass{article}
+\documentclass{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[cyr]{aeguill}
@@ -104,6 +104,58 @@ Un intervalle de confiance pour l'espérance de E, comme les taux d'erreur $E_j$
 
 \subsection*{Sript}
 %%TODO
+
+Vous trouverez le script en annexes (Calcul d'erreurs).
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{Synth1} & $\varepsilon apprentissage$ & $\varepsilon test$ & Intervalle de confiance  \\
+\hline
+40 & $\alpha$ & (-1.904681,0.698841) & $\begin{pmatrix}
+   0.7701334  & 0.2566214 \\
+   0.2566214 & 1.0798685 
+\end{pmatrix}$
+  & 0.55 \\
+\cline{2-3}
+ & $k=2$  & (0.8808594, 0.8587835) & $\begin{pmatrix}
+  1.41546550  & -0.01011499 \\
+  -0.01011499 & 1.22191696 
+\end{pmatrix}$ & 0.45 \\
+\hline
+100 & $k=1$ & (-1.808233,1.057774) & $\begin{pmatrix}
+   1.50880197  & 0.07097749 \\
+   0.07097749 & 0.95833356 
+\end{pmatrix}$
+  & 0.53 \\
+\cline{2-3}
+ & $k=2$  & (0.9831412 1.1610775) & $\begin{pmatrix}
+  0.84677155  & 0.04545945 \\
+  0.04545945 & 0.71631862 
+\end{pmatrix}$ & 0.48 \\
+\hline
+500 & $k=1$ & (-1.9101695, 0.9359349) & $\begin{pmatrix}
+   1.16050554  & 0.03149239 \\
+   0.03149239 & 0.87727376 
+\end{pmatrix}$
+  & 0.48 \\
+\cline{2-3}
+ & $k=2$  & (0.9979001, 0.9843533) & $\begin{pmatrix}
+  0.91978725  & -0.03484383 \\
+  -0.03484383 & 0.95416768 
+\end{pmatrix}$ & 0.52 \\
+\hline
+1000 & $k=1$ & (-1.998992, 1.008186) & $\begin{pmatrix}
+   1.03969441  & -0.07115634 \\
+   -0.07115634 & 0.97107695 
+\end{pmatrix}$
+  & 0.488 \\
+\cline{2-3}
+ & $k=2$  & (1.0908900 0.9837324) & $\begin{pmatrix}
+  1.00246869  & -0.02488749 \\
+  -0.02488749 & 1.02228782 
+\end{pmatrix}$ & 0.512 \\
+\hline
+\end{tabular}\\ \\
 
 \subsection*{Paramètres $\mu_k$ et $\sum_k$ de Synth2}
 

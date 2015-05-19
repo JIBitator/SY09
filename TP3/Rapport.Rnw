@@ -105,6 +105,25 @@ $IC = [u_{\alpha/2}\sqrt{\frac{\varepsilon(1-\varepsilon)}{N}}+\varepsilon, u_{1
 \subsection*{Sript}
 %%TODO
 
+\subsection*{Paramètres $\mu_k$ et $\sum_k$ de Synth2}
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{Synth2} & $\mu_k$ & $\sum_k$ & $\pi_k$  \\
+\hline
+1000 & $k=1$ & (-4.055942,1.011496) & $\begin{pmatrix}
+   1.01455973  & 0.01845083 \\
+   0.01845083 & 0.93975424 
+\end{pmatrix}$
+  & 0.488 \\
+\cline{2-3}
+ & $k=2$  & (4.028957, 1.067821) & $\begin{pmatrix}
+  4.9533975  & 0.1079094 \\
+  0.1079094 & 5.0221245 
+\end{pmatrix}$ & 0.512 \\
+\hline
+\end{tabular}
+
 \section*{Règle de Bayes}
 
 \subsection*{Distributions marginales}

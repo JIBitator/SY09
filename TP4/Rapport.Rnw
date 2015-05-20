@@ -1,0 +1,84 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[cyr]{aeguill}
+\usepackage[francais]{babel}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{TP4: Analyse discrimante, régression logistique}
+\author{Marion Depuydt}
+\maketitle
+\section*{Introduction}
+
+Dans ce TP, nous allons implémenter différentes méthodes d'analyses discrimantes: quadratique, linéaire et bayésienne naïve. Nous implémenterons aussi l'algorithme d'apprentissage de la régression logistique dans le cas binaire. Enfin, nous testerons nos fonctions sur divers set de données.
+
+\section*{Analyse Discrimante}
+
+Nous nous intéressons seulement au cas où g=2. Dans le cas de l'analyse discrimante, nous faisons la forte hypothèse que toutes les classes suivent des lois normales d'espérance $\mu_1$ et $\mu_2$ réciproquement et de variance $\sigma_1$ et $\sigma_2$.
+
+\subsection*{Implémentation}
+
+\subsubsection*{Estimateurs des paramètres}
+
+Afin de calculer la propabilité à postériori des données, il faut d'abord estimer la proportion des classes $\pi$, l'espérance $\mu$ et la variance $\sum$ des lois normales que suivent chaque classe à l'aide d'un ensemble d'apprentissage avec les estimateurs du maximum de vraisemblance (EMV). \\ \\
+
+L'estimation de la proportion de la classe notée $\hat{\pi_k}$ est égale à la probabilité à priori de la classe c'est à dire $\hat{\pi_1}=P(Z=\omega_1)=\frac{n_1}{n}$ et $\hat{\pi_2}=P(Z=\omega_2)=\frac{n_2}{n}$. \\  \\
+
+L'estimation de l'espérance de la loi normale notée $\hat{\mu_k}$ est égale à la moyenne empirique de x ainsi $\hat{\mu_1}=\overline{x_1}=\frac{1}{n_1}\overset{n}{\underset{i=1}{\sum}}z_{i1}x_i$ et $\hat{\mu_2}=\overline{x_2}=\frac{1}{n_2}\overset{n}{\underset{i=1}{\sum}}z_{i2}x_i$. \\ \\
+
+L'estimation de la variance dépend quant à elle de la méthode choisie:
+\begin{itemize}
+  \item \textbf{Cas quadratique:} aucune contrainte n'est imposée sur la variance des classes. Nous prenons donc la variance empirique des classes ou plus souvant la variance empirique corrigée. D'après l'énoncé nous prendrons les estimateurs sans biais c'est à dire $\hat{\sum_k}={V_k}^*=\frac{1}{n_k-1}\overset{n}{\underset{i=1}{\sum}}t_{ik}(x_i-\hat{\mu_k})(x_i-\hat{\mu_k})^t$
+  \item \textbf{Cas linéaire:} nous supposons que la matrice de variance est commune à toutes les classes $\sum_1=\sum_2$. Ainsi $\hat{\sum_k}=\frac{1}{n-g}\overset{g}{\underset{k=1}{\sum}}(n_k-1){V_k}^*$
+  \item \textbf{Cas bayésien naïf:} les matrices de variance diagonales c'est à dire que  les $X_j$ sont conditionnellement indépendantes par rapport à Z. Nous diagonalisons les matrices de variance obtenues.
+\end{itemize}
+
+\subsubsection*{Fonctions d'estimation des paramètres}
+
+\subsubsection*{ADQ}
+<<eval=FALSE>>=
+adq.app <- function(Xapp, zapp) { 
+  res <- NULL
+  res$pi1 <- nrow(Xapp[zapp==1,])/nrow(Xapp)
+  res$pi1 <- nrow(Xapp[zapp==2,])/nrow(Xapp)
+  res$mu1 <- apply(Xapp[zapp==1,], 2, mean)
+  res$mu2 <- apply(Xapp[zapp==2,], 2, mean)
+  res$sigma1 <- var(Xapp[zapp==1,])
+  res$sigma2 <- var(Xapp[zapp==2,])
+  res
+}
+@
+
+\subsubsection*{ADL}
+<<eval=FALSE>>=
+adl.app <- function(Xapp, zapp){
+  res <- NULL
+  res$pi1 <- nrow(Xapp[zapp==1,])/nrow(Xapp)
+  res$pi2 <- nrow(Xapp[zapp==2,])/nrow(Xapp)
+  res$mu1 <- apply(Xapp[zapp==1,], 2, mean)
+  res$mu2 <- apply(Xapp[zapp==2,], 2, mean)
+  res$sigma1 <- 1/(nrow(Xapp)-2)*((res$pi1-1)*var(Xapp[zapp==1,])+(res$pi2-1)*var(Xapp[zapp==2,]))
+  res$sigma2 <- res$sigma1 
+  res
+}
+@
+\subsubsection*{Bayésien naïf}
+<<eval=FALSE>>=
+nba.app <- function(Xapp, zapp) {
+    tmpSigma1 <- matrix(0, nrow=ncol(Xapp), ncol=ncol(Xapp))
+    tmpSigma2 <- matrix(0, nrow=ncol(Xapp), ncol=ncol(Xapp)) 
+    diag(tmpSigma1) <- diag(var(Xapp[zapp==1,])) 
+    diag(tmpSigma2) <- diag(var(Xapp[zapp==2,]))
+    res <- NULL
+    res$pi1 <- nrow(Xapp[zapp==1,])/nrow(Xapp)
+    res$pi2 <- nrow(Xapp[zapp==2,])/nrow(Xapp)
+    res$mu1 <- apply(Xapp[zapp==1,], 2, mean)
+    res$mu2 <- apply(Xapp[zapp==2,], 2, mean)
+    res$sigma1 <- tmpSigma1
+    res$sigma2 <- tmpSigma2
+    res
+}
+@
+\end{document}

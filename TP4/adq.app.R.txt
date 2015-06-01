@@ -1,0 +1,14 @@
+adq.app = function(Xapp,zapp){
+
+	for(i in 1:2){
+		pi = sum(zapp == i) / length(zapp)
+
+		mu = colMeans(Xapp[zapp==i,])
+
+		sigma = var(Xapp[zapp==i,])
+
+		parametres[[i]] = list(pi=pi,mu=mu,sigma=sigma)
+	}
+
+	return(parametres)
+}

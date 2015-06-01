@@ -1,0 +1,95 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[cyr]{aeguill}
+\usepackage[francais]{babel}
+\usepackage{amsmath}
+%\usepackage{bbold}
+
+\begin{document}
+
+\title{TP4: Analyse discriminante, régression logistique}
+\author{Jean Baptiste Vivier - Marion Depuydt}
+\maketitle
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analyse discriminante}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection{Implémentation}
+%%%%%%%%%%%
+
+\subsubsection*{Rappeler les estimateurs des paramètres du modèle dans chacun de ces cas (on choisira les estimateurs sans biais).}
+
+\begin{itemize}
+  \item analyse discriminante quadratique
+    \begin{itemize}
+    \item $\hat{\pi}_k = $
+    \item $\hat{\mu}_k = $
+    \item $\hat{\Sigma}_k = $
+  \end{itemize}
+  
+  \item analyse discriminante linéaire
+      \begin{itemize}
+    \item $\hat{\pi}_k = $
+    \item $\hat{\mu}_k = $
+    \item $\hat{\Sigma} = $
+  \end{itemize}
+  
+  \item classifieur bayésien naïf
+\end{itemize}
+
+
+
+\subsection{Test sur données simulées}
+%%%%%%%%%%%
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Régression logistique}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Implémentation}
+%%%%%%%%%%%
+
+
+\subsection{Test sur données simulées}
+%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Données réelles}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Données «Pima»}
+%%%%%%%%%%%
+
+\subsection{Données «Breast cancer Wisconsin»}
+%%%%%%%%%%%
+
+
+
+\end{document}

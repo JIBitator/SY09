@@ -182,11 +182,13 @@ function(parametres, Xtst){
     }
     
     for(i in 1:2){
-        res[,i] = (f_k[,i]*parametres[[i]]$pi) / 
-          (f_k[,1]*parametres[[1]]$pi + f_k[,2]*parametres[[2]]$pi)
+        res[,i] = (f_k[,i]*parametres[[i]]$pi) / (f_k[,1]*parametres[[1]]$pi + f_k[,2]*parametres[[2]]$pi)
     }
     res[,3] = max.col(res)
+    
+    return(res)
 }
+
 @
 
 \end{document}

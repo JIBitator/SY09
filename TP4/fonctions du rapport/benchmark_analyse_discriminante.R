@@ -35,6 +35,8 @@ benchmark_analyse_discriminante = function() {
 			resume[[f]]$mean = sum(resume[[f]]$mean_by_file) / 3
 	}
 	
+	
+	
 	return(list(details=benchmarks,resume=resume))
 	
 }

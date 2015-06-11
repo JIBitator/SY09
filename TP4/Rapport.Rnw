@@ -54,15 +54,47 @@
 \end{itemize}
 
 
+\subsubsection*{Programmer les fonctions adq.app, adl.app, nba.app et ad.val}
+
+\textit{Voir les fonctions en annexe}
+
+<<echo=FALSE>>=
+load("RData_JB.RData")
+library(MASS)
+
+prob.ad(adq.app(Xapp,zapp),X,z,c(0.5))
+title("Analyse discriminante quadratique")
+
+prob.ad(adl.app(Xapp,zapp),X,z,c(0.5))
+title("Analyse discriminante linéaire")
+
+prob.ad(nba.app(Xapp,zapp),X,z,c(0.5))
+title("Classifieur bayésien naïf")
+@
+
+
 
 \subsection{Test sur données simulées}
 %%%%%%%%%%%
 
+Taux d'erreur moyen sur les 20 séparations effectuées :
+
+\begin{tabular}{ l | c | c | c }
+          & \textbf{adq}   & \textbf{adl}   & \textbf{nba} \\
+  \hline
+  \textbf{Synth1-1000} & 0.028 & 0.037 & 0.036 \\
+  \textbf{Synth2-1000} & 0.010 & 0.011 & 0.017 \\
+  \textbf{Synth3-1000} & 0.012 & 0.024 & 0.013
+\end{tabular}
+
+Nous pouvons tirer quelques conclusions quant à la loi des données 1,2 et 3. On sait d'emblée qu'elles suivent une loi normale multivariée. On peut tirer des informations supplémentaires selon les différents taux d'erreurs obtenus :
 
 
-
-
-
+\begin{itemize}
+\item Jeu de données 1 : l'analyse discriminante quadratique a le taux d'erreur le plus faible. Donc on peut écarter l'hypothèse d'homoscédasticité et d'indépendance des variables.
+\item Jeu de données 2 : analyse discriminante linéaire a le même taux d'erreur que la quadratique. On peut donc supposer l'hypothèse d'homoscédasticité.
+\item Jeu de données 3 : le classifieur bayésien naïf a le même taux d'erreur que l'analyse discriminante quadratique. On peut donc supposer l'indépendance des variables.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Régression logistique}
@@ -71,12 +103,37 @@
 
 \subsection{Implémentation}
 %%%%%%%%%%%
+\textit{Voir les fonctions en annexe}
+
+
+<<echo=FALSE>>=
+load("RData_JB.RData")
+  prob.log(log.app(Xapp,zapp,0,1e-5)$beta, X, z, c(0.5))
+  title("log.app")
+  
+  prob.log2(logQuad.app(Xapp,zapp,0,1e-5)$beta, X, z, c(0.5))
+  title("logQuad.app")
+@
 
 
 \subsection{Test sur données simulées}
 %%%%%%%%%%%
 
 
+Taux d'erreur moyen sur les 20 séparations effectuées :
+
+\begin{tabular}{ l | c | c }
+          & \textbf{log.app}   & \textbf{logQuad.app}   \\
+  \hline
+  \textbf{Synth1-1000} & 0.037 & 0.034  \\
+  \textbf{Synth2-1000} & 0.010 & 0.010  \\
+  \textbf{Synth3-1000} & 0.024 & 0.015 
+\end{tabular}
+
+
+
+  
+  
 
 
 
@@ -160,7 +217,9 @@ function(Xapp,zapp){
         
         pi = sum(zapp == i) / length(zapp)
         mu = colMeans(Xapp_i)
-        sigma = diag(diag(var(Xapp_i) * nrow(Xapp_i)/(nrow(Xapp_i)-1)))
+        sigma = diag(diag(var(Xapp_i) * nrow(Xapp_i)
+                     /
+                     (nrow(Xapp_i)-1)))
         
         parametres[[i]] = list(pi=pi,mu=mu,sigma=sigma)
     }
@@ -172,9 +231,10 @@ function(Xapp,zapp){
 \subsubsection*{ad.val}
 <<eval=FALSE>>=
 function(parametres, Xtst){
-    res = matrix(0, nrow=nrow(Xtst), ncol=3)
+    prob = matrix(0, nrow=nrow(Xtst), ncol=2)
     f_k = matrix(0, nrow=nrow(Xtst), ncol=2)
     
+	########### prob
     for(i in 1:2){
         mu = parametres[[i]]$mu
         sigma = parametres[[i]]$sigma 
@@ -182,13 +242,147 @@ function(parametres, Xtst){
     }
     
     for(i in 1:2){
-        res[,i] = (f_k[,i]*parametres[[i]]$pi) / (f_k[,1]*parametres[[1]]$pi + f_k[,2]*parametres[[2]]$pi)
+        prob[,i] = (f_k[,i]*parametres[[i]]$pi) 
+                   / 
+                   (f_k[,1]*parametres[[1]]$pi + f_k[,2]*parametres[[2]]$pi)
     }
-    res[,3] = max.col(res)
+	
+	############ classement
+    classement = max.col(prob)
     
-    return(res)
+    return(list(prob=prob, classement=classement))
+}
+
+
+@
+
+
+
+\subsubsection*{log.app}
+<<eval=FALSE>>=
+function(Xapp, zapp, intr, epsi) {
+    
+    ############ INIT
+    if(intr==0) {Xapp = as.matrix(Xapp)} 
+    else {Xapp = as.matrix(cbind(rep(1,nrow(Xapp)),Xapp))}
+    dim = ncol(Xapp)
+    w = matrix(0, nrow=dim)
+    if(dim == ncol(Xapp)+1) {w[0] = intr}
+    w_prec = matrix(1000, nrow=dim)
+    t = as.integer(zapp == 1)
+    q = 0
+    niter = 0
+    
+    ########### loop
+    while( sqrt(sum((w - w_prec)^2)) > epsi ) { 
+        ############ pq
+        wx = Xapp %*% w
+        pq = exp(wx) / (1+exp(wx))
+
+        ############ gradient_Lw
+        gradient_Lw = t(Xapp) %*% (t-pq)
+        
+        ############ Wq
+        Wq = diag(as.numeric(pq*(1-pq)))
+        
+        ############ Hq
+        Hq = - t(Xapp) %*% Wq %*% Xapp
+        
+        ############ iteration
+        w_prec = w
+        w = w - solve(Hq) %*% gradient_Lw
+	  niter = niter + 1
+    }
+    
+    logL = sum(t*wx - log(1+exp(wx)))
+
+    return(list(beta=w,niter=niter,logL=logL))
 }
 
 @
+
+
+\subsubsection*{log.val}
+<<eval=FALSE>>=
+function(beta, Xtst) {
+    
+    #################### INIT
+    Xtst = as.matrix(Xtst)
+    beta = as.matrix(beta)
+
+    if(ncol(beta)>nrow(Xtst)) {
+      Xtst = as.matrix(cbind(rep(1,nrow(Xtst)),Xtst))
+    } 
+    prob = matrix(0,nrow=nrow(Xtst),ncol=2)
+    colnames(prob) = c("w1","w2")
+    
+    #################### classement
+    prob[,"w1"] = exp(Xtst%*%beta) / (1+exp(Xtst%*%beta))
+    prob[,"w2"] = 1 - prob[,1]
+    classement = as.integer( prob[,"w1"] < prob[,"w2"] ) + 1
+    
+    return(list(prob=prob, classement=classement))
+}
+
+
+
+@
+
+
+\subsubsection*{logQuad.app}
+<<eval=FALSE>>=
+function(Xapp, zapp, intr, epsi) {
+    
+    ############ INIT
+    Xapp = as.matrix(Xapp)
+    combinations = combn(1:ncol(Xapp),2)
+    XappCombinations = matrix(0,nrow(Xapp),ncol(combinations))
+    for(i in 1:ncol(combinations)){
+        XappCombinations[,i] = Xapp[,combinations[1,i]] 
+                              * Xapp[,combinations[2,i]]
+    }
+    Xapp = cbind(Xapp,XappCombinations,Xapp^2)
+    
+    if(intr!=0) {Xapp = cbind(rep(1,nrow(Xapp)),Xapp)}
+    dim = ncol(Xapp)
+    w = matrix(0, nrow=dim)
+    if(dim == ncol(Xapp)+1) {w[0] = intr}
+    w_prec = matrix(1000, nrow=dim)
+    t = as.integer(zapp == 1)
+    q = 0
+    niter = 0
+    
+    ########### loop
+    while( sqrt(sum((w - w_prec)^2)) > epsi ) { 
+        ############ pq
+        wx = Xapp %*% w
+        pq = exp(wx) / (1+exp(wx))
+        
+        ############ gradient_Lw
+        gradient_Lw = t(Xapp) %*% (t-pq)
+        
+        ############ Wq
+        Wq = diag(as.numeric(pq*(1-pq)))
+        
+        ############ Hq
+        Hq = - t(Xapp) %*% Wq %*% Xapp
+        
+        ############ iteration
+        w_prec = w
+        w = w - solve(Hq) %*% gradient_Lw
+        niter = niter + 1
+    }
+    
+    logL = sum(t*wx - log(1+exp(wx)))
+    
+    return(list(beta=w,niter=niter,logL=logL))
+}
+
+
+@
+
+
+
+
 
 \end{document}

@@ -1,8 +1,8 @@
 
-benchmark_analyse_discriminante = function() {
+benchmark_regression_logistique = function() {
 
-	benchmarks = array(0,dim=c(20,3,3))
-	dimnames(benchmarks)[[3]] = c("adq.app","adl.app","nba.app")
+	benchmarks = array(0,dim=c(20,3,2))
+	dimnames(benchmarks)[[3]] = c("log.app","logQuad.app")
 	dimnames(benchmarks)[[2]] = c("Syhth1-1000","Syhth2-1000","Syhth3-1000")
 
 	######################## benchmarks
@@ -18,10 +18,18 @@ benchmark_analyse_discriminante = function() {
 			zapp = separation$zapp
 			ztst = separation$ztst
 			
-			for(f in c("adq.app","adl.app","nba.app")) {
+			for(f in c("log.app","logQuad.app")) {
 				fct = get(f)
-				parametres = fct(Xapp,zapp)
-				classement = ad.val(parametres,Xtst)$classement
+				if(f == "logQuad.app") {
+					combinations = combn(1:ncol(Xtst),2)
+					XtstCombinations = matrix(0,nrow(Xtst),ncol(combinations))
+					for(ii in 1:ncol(combinations)){
+						XtstCombinations[,ii] = Xtst[,combinations[1,ii]] * Xtst[,combinations[2,ii]]
+					}
+					Xtst = cbind(Xtst,XtstCombinations,Xtst^2)	
+				}				
+				parametres = fct(Xapp,zapp,0,1e-5)
+				classement = log.val(parametres$beta,Xtst)$classement
 				benchmarks[j,i,f] = sum(classement==ztst) / length(ztst)
 			}
 			
@@ -30,7 +38,7 @@ benchmark_analyse_discriminante = function() {
 	
 	######################## means
 	resume = list()
-	for(f in c("adq.app","adl.app","nba.app")) {
+	for(f in c("log.app","logQuad.app")) {
 			resume[[f]]$mean_by_file = apply(benchmarks[1:20,,f],2,mean)
 			resume[[f]]$mean = sum(resume[[f]]$mean_by_file) / 3
 	}

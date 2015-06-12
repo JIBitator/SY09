@@ -32,53 +32,312 @@ L'estimation de la variance dépend quant à elle de la méthode choisie:
 \begin{itemize}
   \item \textbf{Cas quadratique:} aucune contrainte n'est imposée sur la variance des classes. Nous prenons donc la variance empirique des classes ou plus souvant la variance empirique corrigée. D'après l'énoncé nous prendrons les estimateurs sans biais c'est à dire $\hat{\sum_k}={V_k}^*=\frac{1}{n_k-1}\overset{n}{\underset{i=1}{\sum}}t_{ik}(x_i-\hat{\mu_k})(x_i-\hat{\mu_k})^t$
   \item \textbf{Cas linéaire:} nous supposons que la matrice de variance est commune à toutes les classes $\sum_1=\sum_2$. Ainsi $\hat{\sum_k}=\frac{1}{n-g}\overset{g}{\underset{k=1}{\sum}}(n_k-1){V_k}^*$
-  \item \textbf{Cas bayésien naïf:} les matrices de variance diagonales c'est à dire que  les $X_j$ sont conditionnellement indépendantes par rapport à Z. Nous diagonalisons les matrices de variance obtenues.
+  \item \textbf{Cas bayésien naïf:} les matrices de variance diagonales c'est à dire que  les $X_j$ sont conditionnellement indépendantes par rapport à Z. Nous diagonalisons les matrices de variance obtenues. $\sum_1=\sum_2=diag({V_k}^*)$
 \end{itemize}
 
 \subsubsection*{Fonctions d'estimation des paramètres}
 
-\subsubsection*{ADQ}
+\textit{Voir les fonctions en annexe}
+
+Voici les frontières de décision $P(w_1|x)=0.5$ sur le set de données 1 suivant le modèle d'analyse choisie
+<<echo=FALSE>>=
+load("RData_JB.RData")
+library(MASS)
+par(mfrow=c(1,3))
+prob.ad(adq.app(Xapp,zapp),X,z,c(0.5))
+title("Analyse discriminante quadratique")
+
+prob.ad(adl.app(Xapp,zapp),X,z,c(0.5))
+title("Analyse discriminante linéaire")
+
+prob.ad(nba.app(Xapp,zapp),X,z,c(0.5))
+title("Classifieur bayésien naïf")
+@
+
+\subsection{Test sur données simulées}
+
+Taux d'erreur moyen sur les 20 séparations effectuées:
+
+\begin{tabular}{ l | c | c | c }
+          & \textbf{adq}   & \textbf{adl}   & \textbf{nba} \\
+  \hline
+  \textbf{Synth1-1000} & 0.028 & 0.037 & 0.036 \\
+  \textbf{Synth2-1000} & 0.010 & 0.011 & 0.017 \\
+  \textbf{Synth3-1000} & 0.012 & 0.024 & 0.013
+\end{tabular}
+\\
+Nous pouvons tirer quelques conclusions quant à la loi des données 1,2 et 3. On sait d'emblée qu'elles suivent une loi normale multivariée. On peut tirer des informations supplémentaires selon les différents taux d'erreurs obtenus :
+\\
+
+\begin{itemize}
+\item Jeu de données 1 : l'analyse discriminante quadratique a le taux d'erreur le plus faible. Donc on peut écarter l'hypothèse d'homoscédasticité et d'indépendance des variables.
+\item Jeu de données 2 : analyse discriminante linéaire a le même taux d'erreur que la quadratique. On peut donc supposer l'hypothèse d'homoscédasticité.
+\item Jeu de données 3 : le classifieur bayésien naïf a le même taux d'erreur que l'analyse discriminante quadratique. On peut donc supposer l'indépendance des variables.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Régression logistique}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Implémentation}
+%%%%%%%%%%%
+\textit{Voir les fonctions en annexe}
+
+Voici les frontières de décision $P(w_1|x)=0.5$ sur le set de données 1 suivant le modèle d'analyse choisie
+
+<<echo=FALSE>>=
+load("RData_JB.RData")
+par(mfrow=c(1,2))
+  prob.log(log.app(Xapp,zapp,0,1e-5)$beta, X, z, c(0.5))
+  title("log.app")
+  
+  prob.log2(logQuad.app(Xapp,zapp,0,1e-5)$beta, X, z, c(0.5))
+  title("logQuad.app")
+@
+
+
+\subsection{Test sur données simulées}
+%%%%%%%%%%%
+
+Taux d'erreur moyen sur les 20 séparations effectuées :
+
+\begin{tabular}{ l | c | c }
+          & \textbf{log.app}   & \textbf{logQuad.app}   \\
+  \hline
+  \textbf{Synth1-1000} & 0.037 & 0.034  \\
+  \textbf{Synth2-1000} & 0.010 & 0.010  \\
+  \textbf{Synth3-1000} & 0.024 & 0.015 
+\end{tabular}
+\\
+%TODO analse des résultats
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Données réelles}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Données «Pima»}
+%%%%%%%%%%%
+
+\subsection{Données «Breast cancer Wisconsin»}
+%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Annexes: fonctions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Apprentissage de l'ADQ}
 <<eval=FALSE>>=
-adq.app <- function(Xapp, zapp) { 
-  res <- NULL
-  res$pi1 <- nrow(Xapp[zapp==1,])/nrow(Xapp)
-  res$pi1 <- nrow(Xapp[zapp==2,])/nrow(Xapp)
-  res$mu1 <- apply(Xapp[zapp==1,], 2, mean)
-  res$mu2 <- apply(Xapp[zapp==2,], 2, mean)
-  res$sigma1 <- var(Xapp[zapp==1,])
-  res$sigma2 <- var(Xapp[zapp==2,])
-  res
+adq.app = function(Xapp,zapp){
+    parametres = list()
+    
+    for(i in 1:2){
+        Xapp_i = Xapp[zapp==i,]
+        
+        pi = sum(zapp == i) / length(zapp)
+        mu = colMeans(Xapp_i)
+        sigma = var(Xapp_i) * nrow(Xapp_i)/(nrow(Xapp_i)-1)
+        
+        parametres[[i]] = list(pi=pi,mu=mu,sigma=sigma)
+    }
+    
+    return(parametres)
 }
 @
 
-\subsubsection*{ADL}
+\subsection*{Apprentissage de l'ADL}
 <<eval=FALSE>>=
-adl.app <- function(Xapp, zapp){
-  res <- NULL
-  res$pi1 <- nrow(Xapp[zapp==1,])/nrow(Xapp)
-  res$pi2 <- nrow(Xapp[zapp==2,])/nrow(Xapp)
-  res$mu1 <- apply(Xapp[zapp==1,], 2, mean)
-  res$mu2 <- apply(Xapp[zapp==2,], 2, mean)
-  res$sigma1 <- 1/(nrow(Xapp)-2)*((res$pi1-1)*var(Xapp[zapp==1,])+(res$pi2-1)*var(Xapp[zapp==2,]))
-  res$sigma2 <- res$sigma1 
-  res
+function(Xapp,zapp){
+    parametres = list()
+    
+    sigma = 0
+    for(i in 1:2){
+        Xapp_i = Xapp[zapp==i,]
+        sigma = sigma + var(Xapp_i) * nrow(Xapp_i)
+    }
+    sigma = sigma / (nrow(Xapp) - 2)
+    
+    for(i in 1:2){
+        pi = sum(zapp == i) / length(zapp)
+        mu = colMeans(Xapp[zapp==i,])
+        
+        parametres[[i]] = list(pi=pi,mu=mu,sigma=sigma)
+    }
+    
+    return(parametres)
 }
 @
-\subsubsection*{Bayésien naïf}
+
+\subsection*{Apprentissage du classifieur bayésien naïf}
 <<eval=FALSE>>=
-nba.app <- function(Xapp, zapp) {
-    tmpSigma1 <- matrix(0, nrow=ncol(Xapp), ncol=ncol(Xapp))
-    tmpSigma2 <- matrix(0, nrow=ncol(Xapp), ncol=ncol(Xapp)) 
-    diag(tmpSigma1) <- diag(var(Xapp[zapp==1,])) 
-    diag(tmpSigma2) <- diag(var(Xapp[zapp==2,]))
-    res <- NULL
-    res$pi1 <- nrow(Xapp[zapp==1,])/nrow(Xapp)
-    res$pi2 <- nrow(Xapp[zapp==2,])/nrow(Xapp)
-    res$mu1 <- apply(Xapp[zapp==1,], 2, mean)
-    res$mu2 <- apply(Xapp[zapp==2,], 2, mean)
-    res$sigma1 <- tmpSigma1
-    res$sigma2 <- tmpSigma2
-    res
+function(Xapp,zapp){
+    parametres = list()
+    
+    for(i in 1:2){
+        Xapp_i = Xapp[zapp==i,]
+        
+        pi = sum(zapp == i) / length(zapp)
+        mu = colMeans(Xapp_i)
+        sigma = diag(diag(var(Xapp_i) * nrow(Xapp_i)
+                     /
+                     (nrow(Xapp_i)-1)))
+        
+        parametres[[i]] = list(pi=pi,mu=mu,sigma=sigma)
+    }
+    
+    return(parametres)
 }
 @
+
+\subsection*{Calcul des probabilités à postériori (ad.val)}
+<<eval=FALSE>>=
+function(parametres, Xtst){
+    prob = matrix(0, nrow=nrow(Xtst), ncol=2)
+    f_k = matrix(0, nrow=nrow(Xtst), ncol=2)
+    
+	########### prob
+    for(i in 1:2){
+        mu = parametres[[i]]$mu
+        sigma = parametres[[i]]$sigma 
+        f_k[,i] = mvdnorm(Xtst,mu,sigma)
+    }
+    
+    for(i in 1:2){
+        prob[,i] = (f_k[,i]*parametres[[i]]$pi) 
+        / 
+        (f_k[,1]*parametres[[1]]$pi + f_k[,2]*parametres[[2]]$pi)
+    }
+	
+	############ classement
+    classement = max.col(prob)
+    
+    return(list(prob=prob, classement=classement))
+}
+
+
+@
+
+\subsection*{Apprentissage de la régression logistique linéaire}
+<<eval=FALSE>>=
+function(Xapp, zapp, intr, epsi) {
+    
+    ############ INIT
+    if(intr==0) {Xapp = as.matrix(Xapp)} 
+    else {Xapp = as.matrix(cbind(rep(1,nrow(Xapp)),Xapp))}
+    dim = ncol(Xapp)
+    w = matrix(0, nrow=dim)
+    if(dim == ncol(Xapp)+1) {w[0] = intr}
+    w_prec = matrix(1000, nrow=dim)
+    t = as.integer(zapp == 1)
+    q = 0
+    niter = 0
+    
+    ########### loop
+    while( sqrt(sum((w - w_prec)^2)) > epsi ) { 
+        ############ pq
+        wx = Xapp %*% w
+        pq = exp(wx) / (1+exp(wx))
+
+        ############ gradient_Lw
+        gradient_Lw = t(Xapp) %*% (t-pq)
+        
+        ############ Wq
+        Wq = diag(as.numeric(pq*(1-pq)))
+        
+        ############ Hq
+        Hq = - t(Xapp) %*% Wq %*% Xapp
+        
+        ############ iteration
+        w_prec = w
+        w = w - solve(Hq) %*% gradient_Lw
+	  niter = niter + 1
+    }
+    
+    logL = sum(t*wx - log(1+exp(wx)))
+
+    return(list(beta=w,niter=niter,logL=logL))
+}
+
+@
+
+
+\subsection*{}
+<<eval=FALSE>>=
+function(beta, Xtst) {
+    
+    #################### INIT
+    Xtst = as.matrix(Xtst)
+    beta = as.matrix(beta)
+
+    if(ncol(beta)>nrow(Xtst)) {
+      Xtst = as.matrix(cbind(rep(1,nrow(Xtst)),Xtst))
+    } 
+    prob = matrix(0,nrow=nrow(Xtst),ncol=2)
+    colnames(prob) = c("w1","w2")
+    
+    #################### classement
+    prob[,"w1"] = exp(Xtst%*%beta) / (1+exp(Xtst%*%beta))
+    prob[,"w2"] = 1 - prob[,1]
+    classement = as.integer( prob[,"w1"] < prob[,"w2"] ) + 1
+    
+    return(list(prob=prob, classement=classement))
+}
+
+
+
+@
+
+
+\subsection*{Apprentissage de la régression logistique quadratique}
+<<eval=FALSE>>=
+function(Xapp, zapp, intr, epsi) {
+    
+    ############ INIT
+    Xapp = as.matrix(Xapp)
+    combinations = combn(1:ncol(Xapp),2)
+    XappCombinations = matrix(0,nrow(Xapp),ncol(combinations))
+    for(i in 1:ncol(combinations)){
+        XappCombinations[,i] = Xapp[,combinations[1,i]] 
+                              * Xapp[,combinations[2,i]]
+    }
+    Xapp = cbind(Xapp,XappCombinations,Xapp^2)
+    
+    if(intr!=0) {Xapp = cbind(rep(1,nrow(Xapp)),Xapp)}
+    dim = ncol(Xapp)
+    w = matrix(0, nrow=dim)
+    if(dim == ncol(Xapp)+1) {w[0] = intr}
+    w_prec = matrix(1000, nrow=dim)
+    t = as.integer(zapp == 1)
+    q = 0
+    niter = 0
+    
+    ########### loop
+    while( sqrt(sum((w - w_prec)^2)) > epsi ) { 
+        ############ pq
+        wx = Xapp %*% w
+        pq = exp(wx) / (1+exp(wx))
+        
+        ############ gradient_Lw
+        gradient_Lw = t(Xapp) %*% (t-pq)
+        
+        ############ Wq
+        Wq = diag(as.numeric(pq*(1-pq)))
+        
+        ############ Hq
+        Hq = - t(Xapp) %*% Wq %*% Xapp
+        
+        ############ iteration
+        w_prec = w
+        w = w - solve(Hq) %*% gradient_Lw
+        niter = niter + 1
+    }
+    
+    logL = sum(t*wx - log(1+exp(wx)))
+    
+    return(list(beta=w,niter=niter,logL=logL))
+}
+@
+
 \end{document}

@@ -1,12 +1,17 @@
-ad.val <- function(pi1, pi2, mu1, mu2, sigma1, sigma2, Xtst){
-  for(i in 1:nrow(Xtst)){
-    #calculer g1 et g2
-    #calculer f1 et f2 avec mvrnorm
-    f1 <- mvrnorm(mu1, sigma1)
-    f2 <- mvrnorm(mu2, sigma2)
-    P1 <- (pi1*f1)/(pi1*f1+pi2)
-    g1 <- -1/2*t(Xtst[i,]-mu1)*solve(sigma1)*(Xtst[i,]-mu1)-1/2
-    #calculer P1 et P2
-    # prendre le maximum entre P1 et P2 pour déterminer la classe
+ad.val <- function(parametres, Xtst){
+  res = matrix(0, nrow=nrow(Xtst), ncol=3)
+  f_k = matrix(0, nrow=nrow(Xtst), ncol=2)
+  
+  for(i in 1:2){
+    mu = parametres[[i]]$mu
+    sigma = parametres[[i]]$sigma 
+    f_k[,i] = mvdnorm(Xtst,mu,sigma)
   }
+  
+  for(i in 1:2){
+    res[,i] = (f_k[,i]*parametres[[i]]$pi) / 
+      (f_k[,1]*parametres[[1]]$pi + f_k[,2]*parametres[[2]]$pi)
+  }
+  res[,3] = max.col(res)
+  res
 }

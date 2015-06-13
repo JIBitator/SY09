@@ -6,8 +6,6 @@ benchmark_Pima = function() {
   dimnames(benchmarks)[[2]] = c("Pima","Pima", "Pima")
   
   ######################## benchmarks
-  for(i in 1:3) {
-    filename = paste("Synth",i,"-1000.txt", sep="")
     X = Pima[,1:7]
     z = Pima[,8]
     
@@ -26,12 +24,11 @@ benchmark_Pima = function() {
       }
       
     }
-  }
   
   ######################## means
   resume = list()
   for(f in c("adq.app","adl.app","nba.app")) {
-    resume[[f]]$mean_by_file = apply(benchmarks[1:20,,f],2,mean)
+    resume[[f]]$mean_by_file = apply(benchmarks[1:100,,f],2,mean)
     resume[[f]]$mean = sum(resume[[f]]$mean_by_file) / 3
   }
   

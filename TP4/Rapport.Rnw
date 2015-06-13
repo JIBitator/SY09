@@ -120,6 +120,16 @@ Taux d'erreur moyen sur les 20 séparations effectuées :
 \subsection{Données «Pima»}
 %%%%%%%%%%%
 
+%TODO petite analyse avant des données avec explications des variables
+
+\begin{tabular}{|c||c|c|c||c|c|}
+\hline
+Modèle & ADQ & ADL & Bayésien naîf & Rég. logistique & Rég log. quadratique \\
+\hline
+ & 0.2351 & 0.2165 & 0.24 & 0.2936 & 0.251 \\
+\hline
+\end{tabular}\\ \\
+
 \subsection{Données «Breast cancer Wisconsin»}
 %%%%%%%%%%%
 

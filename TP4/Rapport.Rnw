@@ -8,7 +8,7 @@
 \begin{document}
 
 \title{TP4: Analyse discrimante, régression logistique}
-\author{Marion Depuydt}
+\author{Marion Depuydt - Jean-Baptiste Vivier}
 \maketitle
 \section*{Introduction}
 
@@ -57,13 +57,15 @@ title("Classifieur bayésien naïf")
 \subsection{Test sur données simulées}
 
 Taux d'erreur moyen sur les 20 séparations effectuées:
-
-\begin{tabular}{ l | c | c | c }
+\\
+\begin{tabular}{| c | c | c | c |}
+  \hline
           & \textbf{adq}   & \textbf{adl}   & \textbf{nba} \\
   \hline
   \textbf{Synth1-1000} & 0.028 & 0.037 & 0.036 \\
   \textbf{Synth2-1000} & 0.010 & 0.011 & 0.017 \\
-  \textbf{Synth3-1000} & 0.012 & 0.024 & 0.013
+  \textbf{Synth3-1000} & 0.012 & 0.024 & 0.013 \\
+  \hline
 \end{tabular}
 \\
 Nous pouvons tirer quelques conclusions quant à la loi des données 1,2 et 3. On sait d'emblée qu'elles suivent une loi normale multivariée. On peut tirer des informations supplémentaires selon les différents taux d'erreurs obtenus :
@@ -102,12 +104,14 @@ par(mfrow=c(1,2))
 
 Taux d'erreur moyen sur les 20 séparations effectuées :
 
-\begin{tabular}{ l | c | c }
+\begin{tabular}{|c|c|c|}
+  \hline
           & \textbf{log.app}   & \textbf{logQuad.app}   \\
   \hline
   \textbf{Synth1-1000} & 0.037 & 0.034  \\
   \textbf{Synth2-1000} & 0.010 & 0.010  \\
-  \textbf{Synth3-1000} & 0.024 & 0.015 
+  \textbf{Synth3-1000} & 0.024 & 0.015 \\
+  \hline
 \end{tabular}
 \\
 %TODO analse des résultats
@@ -126,12 +130,20 @@ Taux d'erreur moyen sur les 20 séparations effectuées :
 \hline
 Modèle & ADQ & ADL & Bayésien naîf & Rég. logistique & Rég log. quadratique \\
 \hline
- & 0.2351 & 0.2165 & 0.24 & 0.2936 & 0.251 \\
+ & 0.2351 & 0.2165 & 0.24 & 0.2924 & 0.251 \\
 \hline
 \end{tabular}\\ \\
 
 \subsection{Données «Breast cancer Wisconsin»}
 %%%%%%%%%%%
+
+\begin{tabular}{|c||c|c|c||c|c|}
+\hline
+Modèle & ADQ & ADL & Bayésien naîf & Rég. logistique & Rég log. quadratique \\
+\hline
+ & 0.0496 & 0.0435 & 0.0383 & 0.1559 & 0.1689 \\
+\hline
+\end{tabular}\\ \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Annexes: fonctions}

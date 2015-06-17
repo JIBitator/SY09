@@ -14,7 +14,7 @@
 
 Dans ce TP, nous allons implémenter différentes méthodes d'analyses discrimantes: quadratique, linéaire et bayésienne naïve. Nous implémenterons aussi l'algorithme d'apprentissage de la régression logistique dans le cas binaire. Enfin, nous testerons nos fonctions sur divers set de données.
 
-\section*{Analyse Discrimante}
+\section{Analyse Discrimante}
 
 Nous nous intéressons seulement au cas où g=2. Dans le cas de l'analyse discrimante, nous faisons la forte hypothèse que toutes les classes suivent des lois normales d'espérance $\mu_1$ et $\mu_2$ réciproquement et de variance $\sigma_1$ et $\sigma_2$.
 
@@ -39,8 +39,10 @@ L'estimation de la variance dépend quant à elle de la méthode choisie:
 
 \textit{Voir les fonctions en annexe}
 
-Voici les frontières de décision $P(w_1|x)=0.5$ sur le set de données 1 suivant le modèle d'analyse choisie
-<<echo=FALSE>>=
+Voici les frontières de décision $P(w_1|x)=0.5$ sur le set de données 1 suivant le modèle d'analyse choisie.
+
+
+<<echo=FALSE, fig.height=3>>=
 load("RData_JB.RData")
 library(MASS)
 par(mfrow=c(1,3))
@@ -86,9 +88,9 @@ Nous pouvons tirer quelques conclusions quant à la loi des données 1,2 et 3. O
 %%%%%%%%%%%
 \textit{Voir les fonctions en annexe}
 
-Voici les frontières de décision $P(w_1|x)=0.5$ sur le set de données 1 suivant le modèle d'analyse choisie
+Voici les frontières de décision $P(w_1|x)=0.5$ sur le set de données 1 suivant le modèle d'analyse choisie.
 
-<<echo=FALSE>>=
+<<echo=FALSE, fig.height=5>>=
 load("RData_JB.RData")
 par(mfrow=c(1,2))
   prob.log(log.app(Xapp,zapp,0,1e-5)$beta, X, z, c(0.5))
@@ -115,6 +117,10 @@ Taux d'erreur moyen sur les 20 séparations effectuées :
 \end{tabular}
 \\
 %TODO analse des résultats
+
+On constate que le gain de taux d'erreur est négligeable pour les jeux de données 1 et 2. 
+
+Pour le jeu de données 3, le taux d'erreur a diminué de près de 60\%. Il y a eu un gain d'information en rajoutant des combinaisons des autres colones. Cela pourrait être dû au fait que les variables sont indépendantes, comme on en avait conclu avec les tests d'analyse discriminante dans l'exercice précédent. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Données réelles}
